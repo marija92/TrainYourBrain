@@ -150,8 +150,8 @@ namespace TYB_Slagalica
             Brush b1 = new SolidBrush(Color.Wheat);
             p = new Pen(Color.White, 2);
             ci = ci + 5;
-            g.FillPie(b1, 230, 330, 95, 95, 0, ci);
-            g.DrawEllipse(p, 230, 330, 95, 95);
+            g.FillPie(b1, 230, 320, 90, 90, 0, ci);
+            g.DrawEllipse(p, 230, 320, 90, 90);
 
 
             if (ci == 360)
@@ -179,7 +179,7 @@ namespace TYB_Slagalica
         private void Slagalica_Paint_1(object sender, PaintEventArgs e)
         {
             g = this.CreateGraphics();
-            g.FillEllipse(b, 230, 330, 95, 95);
+            g.FillEllipse(b, 230, 320, 90, 90);
 
 
         }

@@ -256,8 +256,8 @@ namespace Mastermind
            p = new Pen(Color.White, 2);
 
            ci = ci + 5;
-           g.FillPie(b1, 255, 387, 70, 70, 0, ci);
-           g.DrawEllipse(p, 255, 387, 70, 70);
+           g.FillPie(b1, 187, 387, 70, 70, 0, ci);
+           g.DrawEllipse(p, 187, 387, 70, 70);
 
 
            if (ci == 360)
@@ -586,7 +586,7 @@ namespace Mastermind
        private void PogodiMe_Paint_1(object sender, PaintEventArgs e)
        {
            g = this.CreateGraphics();
-           g.FillEllipse(b, 255, 387, 70, 70);
+           g.FillEllipse(b, 187, 387, 70, 70);
        }
 
        private void btnSubmit_Click(object sender, EventArgs e)

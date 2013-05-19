@@ -78,7 +78,7 @@
             this.lblRez.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRez.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblRez.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblRez.Location = new System.Drawing.Point(170, 373);
+            this.lblRez.Location = new System.Drawing.Point(170, 374);
             this.lblRez.Name = "lblRez";
             this.lblRez.Size = new System.Drawing.Size(50, 35);
             this.lblRez.TabIndex = 30;
@@ -248,7 +248,7 @@
             this.btnKraj.Location = new System.Drawing.Point(17, 326);
             this.btnKraj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKraj.Name = "btnKraj";
-            this.btnKraj.Size = new System.Drawing.Size(162, 42);
+            this.btnKraj.Size = new System.Drawing.Size(203, 42);
             this.btnKraj.TabIndex = 41;
             this.btnKraj.Text = "Крај";
             this.btnKraj.UseVisualStyleBackColor = false;

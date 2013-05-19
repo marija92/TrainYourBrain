@@ -19,16 +19,18 @@ namespace Quiz
         SoundPlayer cl = new SoundPlayer(TrainYourBrain.Properties.Resources.click);
         SoundPlayer tocno = new SoundPlayer(TrainYourBrain.Properties.Resources.tocno);
         SoundPlayer greska = new SoundPlayer(TrainYourBrain.Properties.Resources.greska);
-        
+
+        Graphics g;
+        Pen p = new Pen(Color.White,2);
+        Brush b = new SolidBrush(Color.IndianRed);
+        Brush b1 = new SolidBrush(Color.Wheat);
+        public float ci = 5;
         
         LinkedList<Prasanje> kviz = new LinkedList<Prasanje>();
         bool odg;
         int br = 0;
         int brT = 0;
         public int rezultat = 0;
-
-        private static readonly int TIME = 30;
-        private int timeElapsed;
 
         
         public Kviz()
@@ -63,10 +65,12 @@ namespace Quiz
         {
             if (br == 5) 
             {
+                
                 if (brT == 5)
                 {
                     MessageBox.Show("Браво! Точно одговоривте на сите прашања");
                     win.Play();
+                    timer1.Stop();
                     rezultat = 100;
                     disabled();
                     return true;
@@ -74,11 +78,13 @@ namespace Quiz
                 else
                 {
                     rezultat=20*brT;
-                    MessageBox.Show("Честитки!");
                     win.Play();
+                    MessageBox.Show("Честитки!");
+                    timer1.Stop();
                     disabled();
                     return (true);
                 }
+                
             }
             return false;
            
@@ -135,7 +141,6 @@ namespace Quiz
         {
             Novo();
             
-            timeElapsed = 0;
            // updateTime();
            ;
             timer1.Start(); 
@@ -145,19 +150,35 @@ namespace Quiz
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-          
-           timeElapsed++;
-           if (timeElapsed == TIME)
-           {
-               MessageBox.Show("Вашето време истече!!!");
-               lose.Play();
-               rezultat = 0;
-               timer1.Stop();
-               disabled();
             
-           }
-           
+            p = new Pen(Color.White, 2);
+
+            ci = ci + 5;
+            g.FillPie(b1, 290, 210, 95, 95, 0, ci);
+            g.DrawEllipse(p, 290, 210, 95, 95);
+            if (ci == 360)
+            {
+                lose.Play();
+                MessageBox.Show("Вашето време истече!");
+                rezultat = 0;
+                disabled();
+                timer1.Stop();
+            }
+
        
+        }
+
+        private void Kviz_Paint(object sender, PaintEventArgs e)
+        {
+            g = this.CreateGraphics();
+            g.FillEllipse(b, 290, 210, 95, 95);
+            g.FillPie(b1, 290, 210, 95, 95, 0, ci);
+            g.DrawEllipse(p, 290, 210, 95, 95);
+        }
+
+        private void Kviz_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Stop();
         }
     }
 }

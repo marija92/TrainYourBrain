@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,12 +8,18 @@ using System.Text;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Threading;
+using System.Media;
 
 
 namespace TYB_Slagalica
 {
     public partial class Slagalica : Form
     {
+
+        SoundPlayer win = new SoundPlayer(TrainYourBrain.Properties.Resources.win);
+        SoundPlayer lose = new SoundPlayer(TrainYourBrain.Properties.Resources.lose);
+        SoundPlayer cl = new SoundPlayer(TrainYourBrain.Properties.Resources.click);
+
         public int rezultat = 0;
         List<Button> list;
         Dictionary<Button, List<Button>> sosedi;
@@ -103,6 +109,7 @@ namespace TYB_Slagalica
 
         private void btn2_Click(object sender, EventArgs e)
         {
+            cl.Play();       
             Button b = (Button)sender;
             List<Button> sos = sosedi[b];
             for (int i = 0; i < sos.Count; i++)
@@ -119,6 +126,7 @@ namespace TYB_Slagalica
             }
             if (isPobeda())
             {
+                win.Play();
                 MessageBox.Show("Честитки!");
                 lblRez.Text = 100.ToString();
                 rezultat = 100;
@@ -166,6 +174,7 @@ namespace TYB_Slagalica
             }
             if (pbTime.Value == 0)
             {
+                lose.Play();
                 MessageBox.Show("Истече вашето време!");
                 timer1.Stop();
                 Disabled();

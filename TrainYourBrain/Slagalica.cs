@@ -22,7 +22,7 @@ namespace TYB_Slagalica
         Pen p;
         Brush b = new SolidBrush(Color.IndianRed);
         public float ci = 5;
-
+        Brush b1;
         public int rezultat = 0;
         List<Button> list;
         Dictionary<Button, List<Button>> sosedi;
@@ -147,7 +147,7 @@ namespace TYB_Slagalica
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            Brush b1 = new SolidBrush(Color.Wheat);
+            b1 = new SolidBrush(Color.Wheat);
             p = new Pen(Color.White, 2);
             ci = ci + 5;
             g.FillPie(b1, 230, 320, 90, 90, 0, ci);
@@ -179,6 +179,8 @@ namespace TYB_Slagalica
         {
             g = this.CreateGraphics();
             g.FillEllipse(b, 230, 320, 90, 90);
+           // g.FillPie(b1, 230, 320, 90, 90, 0, ci);
+           // g.DrawEllipse(p, 230, 320, 90, 90);
 
 
         }

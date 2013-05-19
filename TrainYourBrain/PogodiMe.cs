@@ -19,6 +19,7 @@ namespace Mastermind
         Graphics g;
         Pen p;
         Brush b = new SolidBrush(Color.IndianRed);
+        Brush b1 = new SolidBrush(Color.Wheat);
         public float ci = 5;
 
         LinkedList<LinkedList<Button>> btns;
@@ -254,7 +255,7 @@ namespace Mastermind
 
        private void timer1_Tick(object sender, EventArgs e)
        {
-           Brush b1 = new SolidBrush(Color.Wheat);
+          
            p = new Pen(Color.White, 2);
 
            ci = ci + 5;

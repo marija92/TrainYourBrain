@@ -60,14 +60,13 @@
             this.pb5 = new System.Windows.Forms.PictureBox();
             this.pb6 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.pbTime = new System.Windows.Forms.ProgressBar();
+            this.btnSubmit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
@@ -567,20 +566,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnSubmit
-            // 
-            this.btnSubmit.BackColor = System.Drawing.Color.IndianRed;
-            this.btnSubmit.Enabled = false;
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(239, 390);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(92, 23);
-            this.btnSubmit.TabIndex = 32;
-            this.btnSubmit.Text = "Потврди";
-            this.btnSubmit.UseVisualStyleBackColor = false;
-          //  this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
             // label2
             // 
             this.label2.Location = new System.Drawing.Point(262, 22);
@@ -594,7 +579,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 30);
             this.label3.TabIndex = 34;
-          //  this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -624,27 +608,35 @@
             this.label7.Size = new System.Drawing.Size(79, 30);
             this.label7.TabIndex = 38;
             // 
-            // pbTime
+            // btnSubmit
             // 
-            this.pbTime.Location = new System.Drawing.Point(12, 390);
-            this.pbTime.Name = "pbTime";
-            this.pbTime.Size = new System.Drawing.Size(219, 23);
-            this.pbTime.TabIndex = 39;
+            this.btnSubmit.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnSubmit.FlatAppearance.BorderSize = 0;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(12, 400);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(114, 39);
+            this.btnSubmit.TabIndex = 39;
+            this.btnSubmit.Text = "Потврди!";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // PogodiMe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
-            this.ClientSize = new System.Drawing.Size(343, 415);
-            this.Controls.Add(this.pbTime);
+            this.ClientSize = new System.Drawing.Size(366, 451);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.pb6);
             this.Controls.Add(this.pb5);
             this.Controls.Add(this.pb4);
@@ -677,7 +669,7 @@
             this.Controls.Add(this.btn11);
             this.Name = "PogodiMe";
             this.Text = "Погоди ме";
-            this.Load += new System.EventHandler(this.PogodiMe_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.PogodiMe_Paint_1);
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
@@ -721,14 +713,13 @@
         private System.Windows.Forms.PictureBox pb5;
         private System.Windows.Forms.PictureBox pb6;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ProgressBar pbTime;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }
 

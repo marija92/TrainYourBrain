@@ -578,13 +578,18 @@ namespace Mastermind
            return a;
        }
 
-       private void PogodiMe_Paint(object sender, PaintEventArgs e)
+       
+
+       
+
+      
+       private void PogodiMe_Paint_1(object sender, PaintEventArgs e)
        {
            g = this.CreateGraphics();
            g.FillEllipse(b, 255, 387, 70, 70);
        }
 
-       private void btnSubmit_Click_1(object sender, EventArgs e)
+       private void btnSubmit_Click(object sender, EventArgs e)
        {
            Check(btns.ElementAt(rows));
            PaintBall((tocni > 0), (ima > 0), tocni, ima);
@@ -595,14 +600,9 @@ namespace Mastermind
            else if (rows == 6) endGame(2);
            else enabled();
            cl.Play();
-
        }
 
-       private void PogodiMe_Load(object sender, EventArgs e)
-       {
-
-       }
-
+      
       
 
       

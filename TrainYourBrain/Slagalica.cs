@@ -172,7 +172,11 @@ namespace TYB_Slagalica
             
         }
 
-        private void Slagalica_Paint(object sender, PaintEventArgs e)
+        
+
+        
+
+        private void Slagalica_Paint_1(object sender, PaintEventArgs e)
         {
             g = this.CreateGraphics();
             g.FillEllipse(b, 230, 330, 95, 95);
@@ -180,12 +184,17 @@ namespace TYB_Slagalica
 
         }
 
-        private void btnKraj_Click(object sender, EventArgs e)
+        private void Slagalica_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void btnKraj_Click_1(object sender, EventArgs e)
         {
             if (isPobeda())
             {
                 win.Play();
-                MessageBox.Show("Честитки!");               
+                MessageBox.Show("Честитки!");
                 lblRez.Text = 100.ToString();
                 rezultat = 100;
                 timer1.Stop();
@@ -195,16 +204,17 @@ namespace TYB_Slagalica
             else
             {
                 lose.Play();
-                y.Show();
-                //MessageBox.Show("Повеќе среќа следниот пат!");                
+                MessageBox.Show("Повеќе среќа следниот пат!");
                 lblRez.Text = 0.ToString();
                 rezultat = 0;
                 timer1.Stop();
                 Disabled();
-            
+
             }
+
         }
 
+       
 
 
 

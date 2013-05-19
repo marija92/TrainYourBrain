@@ -602,6 +602,11 @@ namespace Mastermind
            cl.Play();
        }
 
+       private void PogodiMe_FormClosed(object sender, FormClosedEventArgs e)
+       {
+           timer1.Stop();
+       }
+
       
       
 

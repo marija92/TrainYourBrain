@@ -388,8 +388,8 @@ namespace Calculate
             Brush b1 = new SolidBrush(Color.Wheat);
             p = new Pen(Color.White, 2);
             ci = ci + 5;
-            g.FillPie(b1, 205, 3, 70, 70, 0, ci);
-            g.DrawEllipse(p, 205, 3, 70, 70);
+            g.FillPie(b1, 210, 235, 90, 90, 0, ci);
+            g.DrawEllipse(p, 210, 235, 90, 90);
 
             if (ci == 360)
             {
@@ -425,15 +425,20 @@ namespace Calculate
 
                 }
 
-                private void textBox2_Click(object sender, EventArgs e)
+               
+
+                
+
+                private void MojBroj1_Paint_1(object sender, PaintEventArgs e)
                 {
+                    g = this.CreateGraphics();
+                    g.FillEllipse(b, 210, 235, 90, 90);
 
                 }
 
-                private void MojBroj1_Paint(object sender, PaintEventArgs e)
+                private void MojBroj1_FormClosed(object sender, FormClosedEventArgs e)
                 {
-                    g = this.CreateGraphics();
-                    g.FillEllipse(b, 205, 3, 70, 70);
+                    timer1.Stop();
                 }
 
                

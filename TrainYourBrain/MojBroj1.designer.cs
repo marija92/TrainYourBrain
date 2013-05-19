@@ -54,7 +54,6 @@
             this.textBox2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.pbTime = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -276,7 +275,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.IndianRed;
-            this.label6.Location = new System.Drawing.Point(7, 312);
+            this.label6.Location = new System.Drawing.Point(8, 289);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 35);
             this.label6.TabIndex = 28;
@@ -288,7 +287,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.IndianRed;
-            this.label1.Location = new System.Drawing.Point(251, 233);
+            this.label1.Location = new System.Drawing.Point(151, 233);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 30);
             this.label1.TabIndex = 27;
@@ -371,7 +370,6 @@
             this.textBox2.TabIndex = 36;
             this.textBox2.Text = "label9";
             this.textBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // textBox1
             // 
@@ -391,25 +389,17 @@
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.IndianRed;
-            this.label9.Location = new System.Drawing.Point(251, 312);
+            this.label9.Location = new System.Drawing.Point(152, 289);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 35);
             this.label9.TabIndex = 38;
             this.label9.Text = "label9";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pbTime
-            // 
-            this.pbTime.Location = new System.Drawing.Point(12, 276);
-            this.pbTime.Name = "pbTime";
-            this.pbTime.Size = new System.Drawing.Size(286, 23);
-            this.pbTime.TabIndex = 39;
-            this.pbTime.Value = 100;
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 3000;
+            this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MojBroj1
@@ -417,8 +407,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
-            this.ClientSize = new System.Drawing.Size(309, 354);
-            this.Controls.Add(this.pbTime);
+            this.ClientSize = new System.Drawing.Size(309, 332);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
@@ -446,7 +435,9 @@
             this.Controls.Add(this.button2);
             this.Name = "MojBroj1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MojBroj1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load_1);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MojBroj1_Paint_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,7 +470,6 @@
         private System.Windows.Forms.Label textBox2;
         private System.Windows.Forms.Label textBox1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ProgressBar pbTime;
         private System.Windows.Forms.Timer timer1;
     }
 }

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btn1 = new System.Windows.Forms.Button();
-            this.pbTime = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.lblRez = new System.Windows.Forms.Label();
             this.btn3 = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@
             this.btn9 = new System.Windows.Forms.Button();
             this.btn7 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnKraj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn1
@@ -62,22 +62,11 @@
             this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Click += new System.EventHandler(this.btn2_Click);
             // 
-            // pbTime
-            // 
-            this.pbTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbTime.BackColor = System.Drawing.Color.Wheat;
-            this.pbTime.ForeColor = System.Drawing.Color.OrangeRed;
-            this.pbTime.Location = new System.Drawing.Point(9, 348);
-            this.pbTime.Name = "pbTime";
-            this.pbTime.Size = new System.Drawing.Size(334, 23);
-            this.pbTime.TabIndex = 32;
-            this.pbTime.Value = 100;
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.IndianRed;
-            this.label2.Location = new System.Drawing.Point(4, 391);
+            this.label2.Location = new System.Drawing.Point(12, 374);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 36);
             this.label2.TabIndex = 31;
@@ -89,7 +78,7 @@
             this.lblRez.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRez.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblRez.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblRez.Location = new System.Drawing.Point(293, 390);
+            this.lblRez.Location = new System.Drawing.Point(170, 373);
             this.lblRez.Name = "lblRez";
             this.lblRez.Size = new System.Drawing.Size(50, 35);
             this.lblRez.TabIndex = 30;
@@ -246,12 +235,32 @@
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnKraj
+            // 
+            this.btnKraj.BackColor = System.Drawing.Color.IndianRed;
+            this.btnKraj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKraj.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnKraj.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.btnKraj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.btnKraj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnKraj.ForeColor = System.Drawing.Color.White;
+            this.btnKraj.Location = new System.Drawing.Point(17, 326);
+            this.btnKraj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnKraj.Name = "btnKraj";
+            this.btnKraj.Size = new System.Drawing.Size(162, 42);
+            this.btnKraj.TabIndex = 41;
+            this.btnKraj.Text = "Крај";
+            this.btnKraj.UseVisualStyleBackColor = false;
+            this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click_1);
+            // 
             // Slagalica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
-            this.ClientSize = new System.Drawing.Size(355, 431);
+            this.ClientSize = new System.Drawing.Size(355, 413);
+            this.Controls.Add(this.btnKraj);
             this.Controls.Add(this.btn8);
             this.Controls.Add(this.btn9);
             this.Controls.Add(this.btn7);
@@ -260,13 +269,14 @@
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn3);
-            this.Controls.Add(this.pbTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblRez);
             this.Controls.Add(this.btn1);
             this.Name = "Slagalica";
             this.Text = "Слагалица";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Slagalica_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Slagalica_Paint_1);
             this.ResumeLayout(false);
 
         }
@@ -274,7 +284,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn1;
-        private System.Windows.Forms.ProgressBar pbTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblRez;
         private System.Windows.Forms.Button btn3;
@@ -286,6 +295,7 @@
         private System.Windows.Forms.Button btn9;
         private System.Windows.Forms.Button btn7;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnKraj;
     }
 }
 

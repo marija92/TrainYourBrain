@@ -163,7 +163,7 @@ namespace TYB_MojZbor
         }
         static string najdiNajdolg(string path, char[] bukvi)
         {
-            string []redovi=path.Split('\n');
+            string []redovi=path.Split(new char[]{'\n','\r'});
             string najgolem = "";
             try
             {
@@ -266,8 +266,9 @@ namespace TYB_MojZbor
                         brO++;
                     }
                     int razlika = brN - brO;
-                    rezultat = 100 - razlika * 10;
+                    rezultat = Math.Abs( 100 - razlika * 10);
                     lblRez.Text = rezultat.ToString();
+                   
                     timer1.Stop();
                 }
                 else
@@ -318,7 +319,6 @@ namespace TYB_MojZbor
                 lose.Play();
                 MessageBox.Show("Вашето време истече!");
                 lblRez.Text = "0";
-
                
                 rezultat = 0;
                 lblNas.Text = NAJdolg;
@@ -397,6 +397,11 @@ namespace TYB_MojZbor
                 }
             }
             
+        }
+
+        private void MojZbor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timer1.Stop();
         }
 
        

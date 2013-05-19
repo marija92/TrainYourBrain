@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CstYes.cs" />
+    <Compile Include="CstYes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CstYes.Designer.cs">
       <DependentUpon>CstYes.cs</DependentUpon>
     </Compile>
@@ -87,6 +89,12 @@
       <DependentUpon>PogodiMe.cs</DependentUpon>
     </Compile>
     <Compile Include="Prasanje.cs" />
+    <Compile Include="Pravila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pravila.Designer.cs">
+      <DependentUpon>Pravila.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Slagalica.cs">
@@ -115,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PogodiMe.resx">
       <DependentUpon>PogodiMe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pravila.resx">
+      <DependentUpon>Pravila.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

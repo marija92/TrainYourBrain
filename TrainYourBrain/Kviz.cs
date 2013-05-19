@@ -32,7 +32,7 @@ namespace Quiz
 
         private static readonly int TIME = 30;
         private int timeElapsed;
-        TrainYourBrain.CstYes y = new TrainYourBrain.CstYes();
+        
 
         
         public Kviz()
@@ -51,7 +51,7 @@ namespace Quiz
             kviz.AddLast(p);
             p = new Prasanje("Иван Исцелител е од Куманово", true);
             kviz.AddLast(p);
-            p = new Prasanje("Дали Данче Марија и Даринка се царици и зашо да?", true);
+            p = new Prasanje("Игричката ни е супер.Чиста 10ка ;)", true);
             kviz.AddLast(p);
             p = new Prasanje("Грипот уште се нарекува инфлуенца", true);
             kviz.AddLast(p);
@@ -90,8 +90,7 @@ namespace Quiz
             {
                 if (brT == 10)
                 {
-                   // MessageBox.Show("Браво! Точно одговоривте на сите прашања");
-                    y.Show();
+                    TrainYourBrain.CstYes.Show("Точно одговоривте на сите прашања", "Браво!");
                     timer1.Stop();
                     win.Play();
                     rezultat = 100;
@@ -102,15 +101,14 @@ namespace Quiz
                 }
                 else
                 {
-                    rezultat=20*brT;
-                    y.Show();
-                  //  MessageBox.Show("Честитки!");
+                    rezultat=10*brT;
+                    TrainYourBrain.CstYes.Show("Ги одговоривте прашањата во предвиденото време", "Браво!");
                     timer1.Stop();
                     win.Play();
                    // lblRez.Text = rezultat.ToString();
                     disabled();
                    
-                    return (true);
+                    return true;
                 }
             }
             return false;
@@ -173,7 +171,7 @@ namespace Quiz
             
             timeElapsed = 0;
            // updateTime();
-           ;
+           
             timer1.Start(); 
            
             
@@ -191,8 +189,7 @@ namespace Quiz
            if (ci == 360)
            {              
                lose.Play();
-               y.Show();
-               //MessageBox.Show("Вашето време истече!");               
+               TrainYourBrain.CstYes.Show("Вашeто време истече", ":(");               
                rezultat = 0;
                disabled();
                timer1.Stop();

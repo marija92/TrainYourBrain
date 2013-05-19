@@ -13,6 +13,7 @@ namespace Quiz
 {
     public partial class Kviz : Form
     {
+        
 
         SoundPlayer win = new SoundPlayer(TrainYourBrain.Properties.Resources.win);
         SoundPlayer lose = new SoundPlayer(TrainYourBrain.Properties.Resources.lose);
@@ -49,7 +50,7 @@ namespace Quiz
             kviz.AddLast(p);
             p = new Prasanje("Иван Исцелител е од Куманово", true);
             kviz.AddLast(p);
-            p = new Prasanje("Дали Данче Марија и Даринка се царици и зашо да?", true);
+            p = new Prasanje("Проектот ни е супер. Чиста 10ка", true);
             kviz.AddLast(p);
         }
 
@@ -68,8 +69,9 @@ namespace Quiz
                 
                 if (brT == 5)
                 {
-                    MessageBox.Show("Браво! Точно одговоривте на сите прашања");
                     win.Play();
+                    TrainYourBrain.CstYes.Show("Точно одговоривте на сите прашања", "Браво!");                   
+                              
                     timer1.Stop();
                     rezultat = 100;
                     disabled();
@@ -79,10 +81,11 @@ namespace Quiz
                 {
                     rezultat=20*brT;
                     win.Play();
-                    MessageBox.Show("Честитки!");
+                    TrainYourBrain.CstYes.Show("Ја завршивте играта во предвиденото време", "Браво!");
+                   
                     timer1.Stop();
                     disabled();
-                    return (true);
+                    return true;
                 }
                 
             }
@@ -159,7 +162,7 @@ namespace Quiz
             if (ci == 360)
             {
                 lose.Play();
-                MessageBox.Show("Вашето време истече!");
+                TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
                 rezultat = 0;
                 disabled();
                 timer1.Stop();

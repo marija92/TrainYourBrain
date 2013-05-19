@@ -32,7 +32,7 @@ namespace Calculate
 
 
 
-            TrainYourBrain.CstYes y = new TrainYourBrain.CstYes();
+          
         Random rnd = new Random();
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -51,8 +51,7 @@ namespace Calculate
             if (label1.Text.Equals(textBox2.Text))
             {
                 win.Play();
-                y.Show();
-                //MessageBox.Show("Честитки! Вашиот резултат е точен!");
+                TrainYourBrain.CstYes.Show("Вашиот резултат е точен", "Браво!");
                 timer1.Stop();
                 label9.Text = "100";
                 rezultat = 100;
@@ -62,8 +61,7 @@ namespace Calculate
             {
 
                 lose.Play();
-                y.Show();
-               // MessageBox.Show(" Вашиот резултат е неточен!");
+                TrainYourBrain.CstYes.Show("Вашиот резултат е нточен", ":(");
                 label9.Text = "0";
                 timer1.Stop();
                 rezultat = 0;
@@ -395,7 +393,7 @@ namespace Calculate
             {
                 timer1.Stop();
                 lose.Play();
-                MessageBox.Show("Вашето време истече!");
+                TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
                 label9.Text = "0";
                 rezultat = 0;             
                 Disabled();

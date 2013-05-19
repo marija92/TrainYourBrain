@@ -57,13 +57,13 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(28, 239);
+            this.textBox4.Location = new System.Drawing.Point(28, 275);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(265, 102);
+            this.textBox4.Size = new System.Drawing.Size(265, 66);
             this.textBox4.TabIndex = 8;
-            this.textBox4.Text = resources.GetString("textBox4.Text");
+            this.textBox4.Text = "СЛАГАЛИЦА\r\nПоместувајќи ги квадратчињата составете ја слагалицата. ";
             // 
             // textBox3
             // 
@@ -75,9 +75,9 @@
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(265, 65);
+            this.textBox3.Size = new System.Drawing.Size(265, 101);
             this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "ПОГОДИ МЕ\r\nПогодете ја точната комбинација користејќи ги дадените сликички.";
+            this.textBox3.Text = resources.GetString("textBox3.Text");
             // 
             // textBox2
             // 
@@ -92,7 +92,7 @@
             this.textBox2.Size = new System.Drawing.Size(265, 65);
             this.textBox2.TabIndex = 6;
             this.textBox2.Text = "МОЈ БРОЈ\r\nКористејќи ги дадените броеви и оператори потребно е да формирате матем" +
-                "атички израз кој ќе го задоволува дадениот број.";
+    "атички израз кој ќе го задоволува дадениот број.";
             // 
             // textBox1
             // 
@@ -107,7 +107,7 @@
             this.textBox1.Size = new System.Drawing.Size(265, 65);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "МОЈ ЗБОР\r\nОд понудените букви составете збор. Колку е подолг зборот толку повеќе " +
-                "поени добивате.\r\n";
+    "поени добивате.\r\n";
             // 
             // label1
             // 

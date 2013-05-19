@@ -29,7 +29,7 @@ namespace TYB_MojZbor
         public float ci = 5;
         public int rezultat =     0;
         public List<Button> Buk;
-        TrainYourBrain.CstYes y=new TrainYourBrain.CstYes();
+   
         
         
 
@@ -215,8 +215,8 @@ namespace TYB_MojZbor
 
         private void btnKraj_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Дали сте сигурни дека сакате да завршите?", "Заврши ја играта?",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+          
+            if(TrainYourBrain.CstYes.Show("Дали сте сигурни?", "???")==System.Windows.Forms.DialogResult.Yes)
             {
                 Disabled();
                 string ime = lblVas.Text;
@@ -250,9 +250,8 @@ namespace TYB_MojZbor
                 }
                 if (flag == 1)
                 {
-                    win.Play();                    
-                    y.Show();                    
-                   // MessageBox.Show(" Честитки! Вашиот збор е точен!");
+                    win.Play();
+                    TrainYourBrain.CstYes.Show("Вашиот збор е точен","Браво!"); ;
                     lblNas.Text = NAJdolg;
                     int brN = 0;
                     timer1.Stop();
@@ -274,8 +273,7 @@ namespace TYB_MojZbor
                 else
                 {
                     lose.Play();
-                    y.Show();
-                   // MessageBox.Show(" Вашиот збор е неточен! Нашиот збор е " + NAJdolg);
+                    TrainYourBrain.CstYes.Show("Вашиот збор е нточен", ":(");
                     lblRez.Text = "0";
                     timer1.Stop();
                     lblNas.Text = NAJdolg;
@@ -317,7 +315,7 @@ namespace TYB_MojZbor
             {
                 timer1.Stop();
                 lose.Play();
-                MessageBox.Show("Вашето време истече!");
+                TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
                 lblRez.Text = "0";
                
                 rezultat = 0;

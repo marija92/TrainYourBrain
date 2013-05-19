@@ -611,6 +611,7 @@
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubmit.Enabled = false;
             this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
             this.btnSubmit.FlatAppearance.BorderSize = 0;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -28,8 +28,7 @@ namespace Mastermind
    
         int rows = 0;
         Button nextEmpty = new Button();
-        TrainYourBrain.CstYes y = new TrainYourBrain.CstYes();
-        
+                
 
         public PogodiMe()
         {
@@ -111,8 +110,10 @@ namespace Mastermind
             if (i == 1)
             {
                 lose.Play();
-                MessageBox.Show("Вашето време истече. Точната комбинација е: " + TocnaKombinacija());
-               
+                string pom="Вашето време истече.Точната комбинација е " +TocnaKombinacija();
+                TrainYourBrain.CstYes.Show( pom, ":(");
+               // MessageBox.Show("Вашето време истече. Точната комбинација е: " + TocnaKombinacija());
+             
             
             }
 
@@ -120,16 +121,17 @@ namespace Mastermind
             if (i == 2)
             {
                 lose.Play();
-                y.Show();
-                //MessageBox.Show("Не ја погодивте комбинацијата. Точната е: " + TocnaKombinacija());
-             
+                string pom = "Не ја погодивте комбинациајта.Точната комбинација е " + TocnaKombinacija();
+                TrainYourBrain.CstYes.Show(pom, ":(");
+               // timer1.Stop();
             } 
             if (i == 3)
             {
                 win.Play();
-                y.Show();
-               // MessageBox.Show("БРАВО!!!. Ја погодивте точната комбинација: " + TocnaKombinacija());
+                string pom = "Ја погодивте комбинациајта."+ TocnaKombinacija();
+                TrainYourBrain.CstYes.Show(pom, "Браво!"); ;
                 rezultat = 100;
+               // timer1.Stop();
                
             }
             timer1.Stop();
@@ -264,13 +266,9 @@ namespace Mastermind
            {
                timer1.Stop();
                lose.Play();
-               MessageBox.Show("Вашето време истече!");
-              // lblRez.Text = "0";
-
-
+               endGame(1);
                rezultat = 0;
-               //lblNas.Text = NAJdolg;
-              // Disabled();
+              
            }
        }
 
@@ -378,11 +376,14 @@ namespace Mastermind
        {
            btn33.BackgroundImage = null;
          //  kolona=2;
+           cl.Play();
            CanSubmit();
+
        }
 
        private void btn34_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn34.BackgroundImage = null;
           // kolona=3;
            CanSubmit();
@@ -390,6 +391,7 @@ namespace Mastermind
 
        private void btn41_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn41.BackgroundImage = null;
           // kolona=0;
            CanSubmit();
@@ -397,6 +399,7 @@ namespace Mastermind
 
        private void btn42_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn42.BackgroundImage = null;
          //  kolona=1;
            CanSubmit();
@@ -404,6 +407,7 @@ namespace Mastermind
 
        private void btn43_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn43.BackgroundImage = null;
          //  kolona=2;
            CanSubmit();
@@ -411,6 +415,7 @@ namespace Mastermind
 
        private void btn44_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn44.BackgroundImage = null;
          //  kolona=3;
            CanSubmit();
@@ -418,6 +423,7 @@ namespace Mastermind
 
        private void btn51_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn51.BackgroundImage = null;
          //  kolona=0;
            CanSubmit();
@@ -425,6 +431,7 @@ namespace Mastermind
 
        private void btn52_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn52.BackgroundImage = null;
           // kolona=1;
            CanSubmit();
@@ -432,6 +439,7 @@ namespace Mastermind
 
        private void btn53_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn53.BackgroundImage = null;
           // kolona=2;
            CanSubmit();
@@ -439,6 +447,7 @@ namespace Mastermind
 
        private void btn54_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn54.BackgroundImage = null;
           // kolona=3;
            CanSubmit();
@@ -446,6 +455,7 @@ namespace Mastermind
 
        private void btn61_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn61.BackgroundImage = null;
          //  kolona=0;
            CanSubmit();
@@ -453,6 +463,7 @@ namespace Mastermind
 
        private void btn62_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn62.BackgroundImage = null;
           // kolona=1;
            CanSubmit();
@@ -460,6 +471,7 @@ namespace Mastermind
 
        private void btn63_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn63.BackgroundImage = null;
           // kolona=2;
            CanSubmit();
@@ -467,6 +479,7 @@ namespace Mastermind
 
        private void btn64_Click(object sender, EventArgs e)
        {
+           cl.Play();
            btn64.BackgroundImage = null;
           // kolona=3;
            CanSubmit();

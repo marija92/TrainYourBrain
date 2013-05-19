@@ -158,8 +158,7 @@ namespace TYB_Slagalica
             {
                 timer1.Stop();
                 lose.Play();
-                y.Show();
-              //  MessageBox.Show("Вашето време истече!");
+                TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
                 lblRez.Text = "0";
                 rezultat = 0;
                 lblRez.Text = rezultat.ToString();
@@ -194,7 +193,7 @@ namespace TYB_Slagalica
             if (isPobeda())
             {
                 win.Play();
-                MessageBox.Show("Честитки!");
+                TrainYourBrain.CstYes.Show("Честитки!", "Браво!");
                 lblRez.Text = 100.ToString();
                 rezultat = 100;
                 timer1.Stop();
@@ -204,7 +203,7 @@ namespace TYB_Slagalica
             else
             {
                 lose.Play();
-                MessageBox.Show("Повеќе среќа следниот пат!");
+                TrainYourBrain.CstYes.Show("Повеќе срееќа следниот пат", ":(");
                 lblRez.Text = 0.ToString();
                 rezultat = 0;
                 timer1.Stop();

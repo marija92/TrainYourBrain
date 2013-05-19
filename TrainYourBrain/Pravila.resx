@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox4.Text" xml:space="preserve">
-    <value>СЛАГАЛИЦА
-Поместувајќи ги квадратчињата составете ја слагалицата. Црно кругче означува дека некоја сликичка е на вистинското место, а белото кругче дека некоја сликичка постои, но не е на вистинското место. </value>
+  <data name="textBox3.Text" xml:space="preserve">
+    <value>ПОГОДИ МЕ
+Погодете ја точната комбинација користејќи ги дадените сликички. Црно кругче означува дека некоја сликичка е на вистинското место, а белото кругче дека некоја сликичка постои, но не е на вистинското место. </value>
   </data>
 </root>

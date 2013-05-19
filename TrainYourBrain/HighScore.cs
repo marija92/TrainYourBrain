@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -109,6 +109,12 @@ namespace TrainYourBrain
             textBox2.Text = sr.ReadToEnd();
             sr.Dispose();
             Clear();
+            disabled();
+           
+        }
+
+        public void disabled()
+        {
             textBox1.ReadOnly = true;
             button1.Enabled = false;
         }

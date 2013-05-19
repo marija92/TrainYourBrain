@@ -273,7 +273,7 @@ namespace TYB_MojZbor
                 else
                 {
                     lose.Play();
-                    TrainYourBrain.CstYes.Show("Вашиот збор е нточен", ":(");
+                    TrainYourBrain.CstYes.Show("Вашиот збор е неточен", ":(");
                     lblRez.Text = "0";
                     timer1.Stop();
                     lblNas.Text = NAJdolg;

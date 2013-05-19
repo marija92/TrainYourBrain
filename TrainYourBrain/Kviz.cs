@@ -13,18 +13,15 @@ namespace Quiz
 {
     public partial class Kviz : Form
     {
-        
 
         SoundPlayer win = new SoundPlayer(TrainYourBrain.Properties.Resources.win);
         SoundPlayer lose = new SoundPlayer(TrainYourBrain.Properties.Resources.lose);
         SoundPlayer cl = new SoundPlayer(TrainYourBrain.Properties.Resources.click);
         SoundPlayer tocno = new SoundPlayer(TrainYourBrain.Properties.Resources.tocno);
         SoundPlayer greska = new SoundPlayer(TrainYourBrain.Properties.Resources.greska);
-
         Graphics g;
-        Pen p = new Pen(Color.White,2);
+        Pen p;
         Brush b = new SolidBrush(Color.IndianRed);
-        Brush b1 = new SolidBrush(Color.Wheat);
         public float ci = 5;
         
         LinkedList<Prasanje> kviz = new LinkedList<Prasanje>();
@@ -32,6 +29,10 @@ namespace Quiz
         int br = 0;
         int brT = 0;
         public int rezultat = 0;
+
+        private static readonly int TIME = 30;
+        private int timeElapsed;
+        TrainYourBrain.CstYes y = new TrainYourBrain.CstYes();
 
         
         public Kviz()
@@ -50,8 +51,29 @@ namespace Quiz
             kviz.AddLast(p);
             p = new Prasanje("Иван Исцелител е од Куманово", true);
             kviz.AddLast(p);
-            p = new Prasanje("Проектот ни е супер. Чиста 10ка", true);
+            p = new Prasanje("Дали Данче Марија и Даринка се царици и зашо да?", true);
             kviz.AddLast(p);
+            p = new Prasanje("Грипот уште се нарекува инфлуенца", true);
+            kviz.AddLast(p);
+            p = new Prasanje("Бројот PI уште се нарекува Лудолфов број", true);
+            kviz.AddLast(p);
+            p = new Prasanje("Филателист е колекционер на стари монети", false);
+            kviz.AddLast(p);
+            p = new Prasanje("Бројот PI уште се нарекува Лудолфов број", true);
+            kviz.AddLast(p);
+            p = new Prasanje("Октоподот има три срца.", true);
+            kviz.AddLast(p);
+            p = new Prasanje("Лејкерси од НБА лигата доаѓаат од Вашингтон", false);
+            kviz.AddLast(p);
+            p = new Prasanje("Пат околу светот за 80 дена е дело на Виктор Иго", false);
+            kviz.AddLast(p);
+            p = new Prasanje("Грофот Дракула е од Трансилванија", true);
+            kviz.AddLast(p);
+            p = new Prasanje("Текила е Мексикански пијалок", true);
+            kviz.AddLast(p);
+            p = new Prasanje("Губитокот на памтењето уште се нарекува анестезија", false);
+            kviz.AddLast(p);
+
         }
 
         public void Novo()
@@ -64,30 +86,32 @@ namespace Quiz
         }
         public bool isEnd()
         {
-            if (br == 5) 
+            if (br == 10) 
             {
-                
-                if (brT == 5)
+                if (brT == 10)
                 {
-                    win.Play();
-                    TrainYourBrain.CstYes.Show("Точно одговоривте на сите прашања", "Браво!");                   
-                              
+                   // MessageBox.Show("Браво! Точно одговоривте на сите прашања");
+                    y.Show();
                     timer1.Stop();
+                    win.Play();
                     rezultat = 100;
+                  //  lblRez.Text = 100.ToString();
                     disabled();
                     return true;
+                   
                 }
                 else
                 {
                     rezultat=20*brT;
-                    win.Play();
-                    TrainYourBrain.CstYes.Show("Ја завршивте играта во предвиденото време", "Браво!");
-                   
+                    y.Show();
+                  //  MessageBox.Show("Честитки!");
                     timer1.Stop();
+                    win.Play();
+                   // lblRez.Text = rezultat.ToString();
                     disabled();
-                    return true;
+                   
+                    return (true);
                 }
-                
             }
             return false;
            
@@ -97,10 +121,13 @@ namespace Quiz
         public void isTrue(bool b)
         {
             if (odg == b)
-            { 
-                br++; 
+            {
+                rezultat += 10;
+                br++;
                 brT++;
                 tocno.Play();
+                tocni.Text = brT.ToString();
+                poeni.Text = rezultat.ToString();
             }
             else 
             { 
@@ -144,6 +171,7 @@ namespace Quiz
         {
             Novo();
             
+            timeElapsed = 0;
            // updateTime();
            ;
             timer1.Start(); 
@@ -153,35 +181,31 @@ namespace Quiz
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-            p = new Pen(Color.White, 2);
+          
+           Brush b1 = new SolidBrush(Color.Wheat);
+           p = new Pen(Color.White, 2);
 
-            ci = ci + 5;
-            g.FillPie(b1, 290, 210, 95, 95, 0, ci);
-            g.DrawEllipse(p, 290, 210, 95, 95);
-            if (ci == 360)
-            {
-                lose.Play();
-                TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
-                rezultat = 0;
-                disabled();
-                timer1.Stop();
-            }
+           ci = ci + 5;
+           g.FillPie(b1,150, 250, 95, 95, 0, ci);
+           g.DrawEllipse(p, 150, 250, 95, 95);
+           if (ci == 360)
+           {              
+               lose.Play();
+               y.Show();
+               //MessageBox.Show("Вашето време истече!");               
+               rezultat = 0;
+               disabled();
+               timer1.Stop();
+           }
 
+           
        
         }
 
         private void Kviz_Paint(object sender, PaintEventArgs e)
         {
             g = this.CreateGraphics();
-            g.FillEllipse(b, 290, 210, 95, 95);
-            g.FillPie(b1, 290, 210, 95, 95, 0, ci);
-            g.DrawEllipse(p, 290, 210, 95, 95);
-        }
-
-        private void Kviz_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            timer1.Stop();
+            g.FillEllipse(b, 150, 250, 95, 95);
         }
     }
 }

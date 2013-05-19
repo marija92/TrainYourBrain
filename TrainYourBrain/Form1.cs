@@ -175,6 +175,12 @@ namespace TrainYourBrain
             
         }
 
+        private void правилаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pravila pr = new Pravila();
+            pr.ShowDialog();
+        }
+
           
 
         

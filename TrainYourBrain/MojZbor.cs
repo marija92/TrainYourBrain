@@ -27,9 +27,12 @@ namespace TYB_MojZbor
         string NAJdolg;
         Random r = new Random();
         public float ci = 5;
-        public int rezultat = 
-            0;
+        public int rezultat =     0;
         public List<Button> Buk;
+        TrainYourBrain.CstYes y=new TrainYourBrain.CstYes();
+        
+        
+
         
        // int vreme;
         public MojZbor()
@@ -86,7 +89,9 @@ namespace TYB_MojZbor
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //test
+            
+           
+            
             
             char[] bukvi = dajMiBukvi();
             
@@ -245,9 +250,14 @@ namespace TYB_MojZbor
                 if (flag == 1)
                 {
                     win.Play();
-                    MessageBox.Show(" Честитки! Вашиот збор е точен!");
+
+                    
+                    y.Show();
+                    
+                   // MessageBox.Show(" Честитки! Вашиот збор е точен!");
                     lblNas.Text = NAJdolg;
                     int brN = 0;
+                    timer1.Stop();
                     foreach (char c in lblNas.Text)
                     {
                         brN++;
@@ -265,8 +275,10 @@ namespace TYB_MojZbor
                 else
                 {
                     lose.Play();
-                    MessageBox.Show(" Вашиот збор е неточен! Нашиот збор е " + NAJdolg);
+                    y.Show();
+                   // MessageBox.Show(" Вашиот збор е неточен! Нашиот збор е " + NAJdolg);
                     lblRez.Text = "0";
+                    timer1.Stop();
                     lblNas.Text = NAJdolg;
                     timer1.Stop();
                 }
@@ -292,17 +304,14 @@ namespace TYB_MojZbor
         }
         private void timer1_Tick(object sender, System.EventArgs e)
         {
-           
-                      
+                                
            
             Brush b1 = new SolidBrush(Color.Wheat);
-            p = new Pen(Color.White, 2);
-           
+            p = new Pen(Color.White, 2);         
            
                 ci = ci + 5;
                 g.FillPie(b1, 190, 125, 70, 70, 0, ci);
-                g.DrawEllipse(p, 190, 125, 70, 70);
-               
+                g.DrawEllipse(p, 190, 125, 70, 70);              
             
              
             if (ci == 360)
@@ -343,8 +352,7 @@ namespace TYB_MojZbor
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            g = this.CreateGraphics();
-            
+            g = this.CreateGraphics();            
             g.FillEllipse(b, 190, 125, 70, 70);
            
         }

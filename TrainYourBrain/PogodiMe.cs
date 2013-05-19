@@ -16,6 +16,10 @@ namespace Mastermind
         SoundPlayer win = new SoundPlayer(TrainYourBrain.Properties.Resources.win);
         SoundPlayer lose = new SoundPlayer(TrainYourBrain.Properties.Resources.lose);
         SoundPlayer cl = new SoundPlayer(TrainYourBrain.Properties.Resources.click);
+        Graphics g;
+        Pen p;
+        Brush b = new SolidBrush(Color.IndianRed);
+        public float ci = 5;
 
         LinkedList<LinkedList<Button>> btns;
         int[][] pomosna = new int[6][];
@@ -24,6 +28,7 @@ namespace Mastermind
    
         int rows = 0;
         Button nextEmpty = new Button();
+        TrainYourBrain.CstYes y = new TrainYourBrain.CstYes();
         
 
         public PogodiMe()
@@ -97,8 +102,7 @@ namespace Mastermind
             enabled();
             timeElapsed = 0;
             updateTime();
-            pbTime.Maximum = TIME;
-            pbTime.Value = TIME;
+           
             timer1.Start();            
         }
 
@@ -108,6 +112,7 @@ namespace Mastermind
             {
                 lose.Play();
                 MessageBox.Show("Вашето време истече. Точната комбинација е: " + TocnaKombinacija());
+               
             
             }
 
@@ -115,13 +120,17 @@ namespace Mastermind
             if (i == 2)
             {
                 lose.Play();
-                MessageBox.Show("Не ја погодивте комбинацијата. Точната е: " + TocnaKombinacija());
+                y.Show();
+                //MessageBox.Show("Не ја погодивте комбинацијата. Точната е: " + TocnaKombinacija());
+             
             } 
             if (i == 3)
             {
                 win.Play();
-                MessageBox.Show("БРАВО!!!. Ја погодивте точната комбинација: " + TocnaKombinacija());
+                y.Show();
+               // MessageBox.Show("БРАВО!!!. Ја погодивте точната комбинација: " + TocnaKombinacija());
                 rezultat = 100;
+               
             }
             timer1.Stop();
             btnSubmit.Enabled = false;
@@ -243,14 +252,26 @@ namespace Mastermind
 
        private void timer1_Tick(object sender, EventArgs e)
        {
-           timeElapsed++;
-           pbTime.Value = TIME - timeElapsed;
-           if (timeElapsed == TIME)
-           {             
-             timer1.Stop();
-             endGame(1);
+           Brush b1 = new SolidBrush(Color.Wheat);
+           p = new Pen(Color.White, 2);
+
+           ci = ci + 5;
+           g.FillPie(b1, 255, 387, 70, 70, 0, ci);
+           g.DrawEllipse(p, 255, 387, 70, 70);
+
+
+           if (ci == 360)
+           {
+               timer1.Stop();
+               lose.Play();
+               MessageBox.Show("Вашето време истече!");
+              // lblRez.Text = "0";
+
+
+               rezultat = 0;
+               //lblNas.Text = NAJdolg;
+              // Disabled();
            }
-           updateTime();
        }
 
        private void updateTime()
@@ -484,20 +505,9 @@ namespace Mastermind
            else btnSubmit.Enabled=false;
        }
 
-       private void btnSubmit_Click(object sender, EventArgs e)
-       {
-           Check(btns.ElementAt(rows));
-           Paint((tocni>0),(ima>0), tocni, ima);
-           disabled();
-           rows++;
-           btnSubmit.Enabled = false;
-           if (tocni == 4) endGame(3);
-           else if (rows == 6) endGame(2);
-           else enabled();
-           cl.Play();
-       }
+      
 
-       public void Paint(bool t, bool n,int brT, int brN)
+       public void PaintBall(bool t, bool n,int brT, int brN)
        {
            Graphics g; 
            if (rows == 0)
@@ -568,16 +578,39 @@ namespace Mastermind
            return a;
        }
 
+       private void PogodiMe_Paint(object sender, PaintEventArgs e)
+       {
+           g = this.CreateGraphics();
+           g.FillEllipse(b, 255, 387, 70, 70);
+       }
+
+       private void btnSubmit_Click_1(object sender, EventArgs e)
+       {
+           Check(btns.ElementAt(rows));
+           PaintBall((tocni > 0), (ima > 0), tocni, ima);
+           disabled();
+           rows++;
+           btnSubmit.Enabled = false;
+           if (tocni == 4) endGame(3);
+           else if (rows == 6) endGame(2);
+           else enabled();
+           cl.Play();
+
+       }
+
        private void PogodiMe_Load(object sender, EventArgs e)
        {
 
        }
 
-       private void label3_Click(object sender, EventArgs e)
-       {
+      
 
-       }
+      
+      
 
+     
+
+  
        
 
              

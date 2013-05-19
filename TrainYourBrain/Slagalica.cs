@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,14 +15,18 @@ namespace TYB_Slagalica
 {
     public partial class Slagalica : Form
     {
-
         SoundPlayer win = new SoundPlayer(TrainYourBrain.Properties.Resources.win);
         SoundPlayer lose = new SoundPlayer(TrainYourBrain.Properties.Resources.lose);
         SoundPlayer cl = new SoundPlayer(TrainYourBrain.Properties.Resources.click);
+        Graphics g;
+        Pen p;
+        Brush b = new SolidBrush(Color.IndianRed);
+        public float ci = 5;
 
         public int rezultat = 0;
         List<Button> list;
         Dictionary<Button, List<Button>> sosedi;
+        TrainYourBrain.CstYes y = new TrainYourBrain.CstYes();
         public Slagalica()
         {
             InitializeComponent();
@@ -109,9 +113,9 @@ namespace TYB_Slagalica
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            cl.Play();       
             Button b = (Button)sender;
             List<Button> sos = sosedi[b];
+            cl.Play();
             for (int i = 0; i < sos.Count; i++)
             {
                 if (sos[i].Visible ==false)
@@ -124,16 +128,7 @@ namespace TYB_Slagalica
                     break;
                 }
             }
-            if (isPobeda())
-            {
-                win.Play();
-                MessageBox.Show("Честитки!");
-                lblRez.Text = 100.ToString();
-                rezultat = 100;
-                timer1.Stop();
-                Disabled();
-
-            }
+            
         }
         private void Disabled()
         {
@@ -151,38 +146,69 @@ namespace TYB_Slagalica
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int f=0;
-            if (pbTime.Value >= 0)
+
+            Brush b1 = new SolidBrush(Color.Wheat);
+            p = new Pen(Color.White, 2);
+            ci = ci + 5;
+            g.FillPie(b1, 230, 330, 95, 95, 0, ci);
+            g.DrawEllipse(p, 230, 330, 95, 95);
+
+
+            if (ci == 360)
             {
+                timer1.Stop();
+                lose.Play();
+                y.Show();
+              //  MessageBox.Show("Вашето време истече!");
+                lblRez.Text = "0";
+                rezultat = 0;
+                lblRez.Text = rezultat.ToString();
+                Disabled();
+            }
+
+
                 
-                if (pbTime.Value  ==1)
-                {
-                    pbTime.Value = 0;
-                    timer1.Stop();
-                    Disabled();
-                    f = 1;
-                }
-                if(f==0)                
-                pbTime.Value--;
+
+            
+        }
+
+        private void Slagalica_Paint(object sender, PaintEventArgs e)
+        {
+            g = this.CreateGraphics();
+            g.FillEllipse(b, 230, 330, 95, 95);
+
+
+        }
+
+        private void btnKraj_Click(object sender, EventArgs e)
+        {
+            if (isPobeda())
+            {
+                win.Play();
+                MessageBox.Show("Честитки!");               
+                lblRez.Text = 100.ToString();
+                rezultat = 100;
+                timer1.Stop();
+                Disabled();
+
             }
             else
             {
-                pbTime.Value = 0;
-                timer1.Stop();
-                Disabled();
-
-            }
-            if (pbTime.Value == 0)
-            {
                 lose.Play();
-                MessageBox.Show("Истече вашето време!");
+                y.Show();
+                //MessageBox.Show("Повеќе среќа следниот пат!");                
+                lblRez.Text = 0.ToString();
+                rezultat = 0;
                 timer1.Stop();
                 Disabled();
-
-                
-
+            
             }
         }
+
+
+
+
+
         }
 
     }

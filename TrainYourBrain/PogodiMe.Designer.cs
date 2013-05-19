@@ -579,7 +579,7 @@
             this.btnSubmit.TabIndex = 32;
             this.btnSubmit.Text = "Потврди";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+          //  this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label2
             // 
@@ -594,7 +594,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 30);
             this.label3.TabIndex = 34;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+          //  this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 

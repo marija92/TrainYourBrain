@@ -17,7 +17,11 @@ namespace Calculate
         SoundPlayer win = new SoundPlayer(TrainYourBrain.Properties.Resources.win);
         SoundPlayer lose = new SoundPlayer(TrainYourBrain.Properties.Resources.lose);
         SoundPlayer cl = new SoundPlayer(TrainYourBrain.Properties.Resources.click);
+        Graphics g;
+        Pen p;
+        Brush b = new SolidBrush(Color.IndianRed);
         public int rezultat = 0;
+        public float ci = 5;
         public MojBroj1()
         {
             InitializeComponent();
@@ -25,10 +29,10 @@ namespace Calculate
 
         
             Stack<Button> stack = new Stack<Button>();
-            
-            
-        
 
+
+
+            TrainYourBrain.CstYes y = new TrainYourBrain.CstYes();
         Random rnd = new Random();
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -47,7 +51,9 @@ namespace Calculate
             if (label1.Text.Equals(textBox2.Text))
             {
                 win.Play();
-                MessageBox.Show("Честитки! Вашиот резултат е точен!");
+                y.Show();
+                //MessageBox.Show("Честитки! Вашиот резултат е точен!");
+                timer1.Stop();
                 label9.Text = "100";
                 rezultat = 100;
                 
@@ -56,8 +62,10 @@ namespace Calculate
             {
 
                 lose.Play();
-                MessageBox.Show(" Вашиот резултат е неточен!");
+                y.Show();
+               // MessageBox.Show(" Вашиот резултат е неточен!");
                 label9.Text = "0";
+                timer1.Stop();
                 rezultat = 0;
 
             }
@@ -377,36 +385,27 @@ namespace Calculate
             
                 private void timer1_Tick(object sender, System.EventArgs e)
         {
-            int f=0;
-            if (pbTime.Value >= 0)
-            {
-                
-                if (pbTime.Value  ==1)
-                {
-                    pbTime.Value = 0;
-                    timer1.Stop();
-                    Disabled();
-                    f = 1;
-                }
-                if(f==0)                
-                pbTime.Value--;
-            }
-            else
-            {
-                pbTime.Value = 0;
-                timer1.Stop();
-                Disabled();
-            }
-            if (pbTime.Value == 0)
-            {
-                lose.Play();
-                MessageBox.Show("Истече вашето време!");
-                timer1.Stop();
-                
-                
-                Disabled();
+            Brush b1 = new SolidBrush(Color.Wheat);
+            p = new Pen(Color.White, 2);
+            ci = ci + 5;
+            g.FillPie(b1, 205, 3, 70, 70, 0, ci);
+            g.DrawEllipse(p, 205, 3, 70, 70);
 
+            if (ci == 360)
+            {
+                timer1.Stop();
+                lose.Play();
+                MessageBox.Show("Вашето време истече!");
+                label9.Text = "0";
+                rezultat = 0;             
+                Disabled();
             }
+           
+                
+                
+              
+
+            
         }
 
                 private void Disabled()
@@ -430,6 +429,18 @@ namespace Calculate
                 {
 
                 }
+
+                private void MojBroj1_Paint(object sender, PaintEventArgs e)
+                {
+                    g = this.CreateGraphics();
+                    g.FillEllipse(b, 205, 3, 70, 70);
+                }
+
+               
+
+               
+
+               
                  
 
         }

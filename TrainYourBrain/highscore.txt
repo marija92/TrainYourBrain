@@ -1,0 +1,3 @@
+Marija	20
+Darinka	30
+Danche	50

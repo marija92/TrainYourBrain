@@ -600,6 +600,8 @@ namespace Mastermind
        {
            g = this.CreateGraphics();
            g.FillEllipse(b, 187, 387, 70, 70);
+            g.FillPie(b1, 187, 387, 70, 70, 0, ci);
+           g.DrawEllipse(p, 187, 387, 70, 70);
        }
 
        private void btnSubmit_Click(object sender, EventArgs e)

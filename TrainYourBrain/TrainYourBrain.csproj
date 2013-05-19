@@ -45,6 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CstYes.cs" />
+    <Compile Include="CstYes.Designer.cs">
+      <DependentUpon>CstYes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Evaluator.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -91,6 +95,9 @@
     <Compile Include="Slagalica.designer.cs">
       <DependentUpon>Slagalica.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CstYes.resx">
+      <DependentUpon>CstYes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

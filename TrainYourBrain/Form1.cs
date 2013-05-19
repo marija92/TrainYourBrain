@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -170,7 +170,9 @@ namespace TrainYourBrain
         {
             HighScore hs = new HighScore();
             hs.vkupno = int.Parse(lblVkupno.Text);
+            hs.disabled();
             hs.ShowDialog();
+            
         }
 
           

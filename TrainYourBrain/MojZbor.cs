@@ -86,9 +86,7 @@ namespace TYB_MojZbor
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-           
-            
+            //test
             
             char[] bukvi = dajMiBukvi();
             

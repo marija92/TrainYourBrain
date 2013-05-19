@@ -221,7 +221,8 @@ namespace TYB_MojZbor
                 Disabled();
                 string ime = lblVas.Text;
                 string path = TrainYourBrain.Properties.Resources.baza;
-                string[] redovi=path.Split('\n');
+                
+                string[] redovi=path.Split(new char[]{'\n','\r'});
                 int flag = 0;
                 timer1.Stop();
                 try
@@ -249,11 +250,8 @@ namespace TYB_MojZbor
                 }
                 if (flag == 1)
                 {
-                    win.Play();
-
-                    
-                    y.Show();
-                    
+                    win.Play();                    
+                    y.Show();                    
                    // MessageBox.Show(" Честитки! Вашиот збор е точен!");
                     lblNas.Text = NAJdolg;
                     int brN = 0;

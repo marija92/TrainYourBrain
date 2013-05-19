@@ -27,5 +27,10 @@ namespace TrainYourBrain
             
 
         }
+
+        private void CstYes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -276,7 +276,7 @@
             this.Text = "Слагалица";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Slagalica_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Slagalica_Paint);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Slagalica_Paint_1);
             this.ResumeLayout(false);
 
         }

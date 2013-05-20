@@ -173,6 +173,15 @@ namespace TYB_Slagalica
 
         
 
+        
+
+        private void Slagalica_Paint_1(object sender, PaintEventArgs e)
+        {
+            g = this.CreateGraphics();
+            g.FillEllipse(b, 230, 320, 90, 90);
+           
+
+        }
 
         private void Slagalica_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -202,14 +211,6 @@ namespace TYB_Slagalica
 
             }
 
-        }
-
-        private void Slagalica_Paint(object sender, PaintEventArgs e)
-        {
-            g = this.CreateGraphics();
-            g.FillEllipse(b, 230, 320, 90, 90);
-            //g.FillPie(b1, 230, 320, 90, 90, 0, ci);
-            //g.DrawEllipse(p, 230, 320, 90, 90);
         }
 
        

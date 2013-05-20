@@ -51,15 +51,15 @@ namespace Quiz
             kviz.AddLast(p);
             p = new Prasanje("Иван Исцелител е од Куманово", true);
             kviz.AddLast(p);
-            p = new Prasanje("Игричката ни е супер.Чиста 10ка ;)", true);
-            kviz.AddLast(p);
+          //  p = new Prasanje("Игричката ни е супер.Чиста 10ка ;)", true);
+           // kviz.AddLast(p);
             p = new Prasanje("Грипот уште се нарекува инфлуенца", true);
             kviz.AddLast(p);
             p = new Prasanje("Бројот PI уште се нарекува Лудолфов број", true);
             kviz.AddLast(p);
             p = new Prasanje("Филателист е колекционер на стари монети", false);
             kviz.AddLast(p);
-            p = new Prasanje("Бројот PI уште се нарекува Лудолфов број", true);
+            p = new Prasanje("Логото на 'Apple' е гризнато јаболко", true);
             kviz.AddLast(p);
             p = new Prasanje("Октоподот има три срца.", true);
             kviz.AddLast(p);
@@ -72,6 +72,12 @@ namespace Quiz
             p = new Prasanje("Текила е Мексикански пијалок", true);
             kviz.AddLast(p);
             p = new Prasanje("Губитокот на памтењето уште се нарекува анестезија", false);
+            kviz.AddLast(p);
+            p = new Prasanje("Хемискиот симбол за сребро е Ag", true);
+            kviz.AddLast(p);
+            p = new Prasanje("Еден километар има 100 метри", false);
+            kviz.AddLast(p);
+            p = new Prasanje("Првата светска војна траела 5 години", false);
             kviz.AddLast(p);
 
         }

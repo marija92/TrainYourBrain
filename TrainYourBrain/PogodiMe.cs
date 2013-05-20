@@ -135,6 +135,7 @@ namespace Mastermind
                // timer1.Stop();
                
             }
+
             timer1.Stop();
             btnSubmit.Enabled = false;
             pb1.Enabled = false;

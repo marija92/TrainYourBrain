@@ -277,7 +277,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
-            this.ClientSize = new System.Drawing.Size(331, 391);
+            this.ClientSize = new System.Drawing.Size(331, 396);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblVkupno);
             this.Controls.Add(this.lblKviz);

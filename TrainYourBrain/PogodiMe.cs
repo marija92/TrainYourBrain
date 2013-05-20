@@ -114,7 +114,7 @@ namespace Mastermind
                 string pom="Вашето време истече.Точната комбинација е " +TocnaKombinacija();
                 TrainYourBrain.CstYes.Show( pom, ":(");
                // MessageBox.Show("Вашето време истече. Точната комбинација е: " + TocnaKombinacija());
-             
+                this.Close();
             
             }
 
@@ -124,6 +124,7 @@ namespace Mastermind
                 lose.Play();
                 string pom = "Не ја погодивте комбинациајта.Точната комбинација е " + TocnaKombinacija();
                 TrainYourBrain.CstYes.Show(pom, ":(");
+                this.Close();
                // timer1.Stop();
             } 
             if (i == 3)
@@ -132,6 +133,7 @@ namespace Mastermind
                 string pom = "Ја погодивте комбинациајта."+ TocnaKombinacija();
                 TrainYourBrain.CstYes.Show(pom, "Браво!"); ;
                 rezultat = 100;
+                this.Close();
                // timer1.Stop();
                
             }

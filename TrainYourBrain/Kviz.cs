@@ -96,24 +96,25 @@ namespace Quiz
             {
                 if (brT == 10)
                 {
-                    TrainYourBrain.CstYes.Show("Точно одговоривте на сите прашања", "Браво!");
                     timer1.Stop();
                     win.Play();
                     rezultat = 100;
-                  //  lblRez.Text = 100.ToString();
+                    //  lblRez.Text = 100.ToString();
                     disabled();
+                    TrainYourBrain.CstYes.Show("Точно одговоривте на сите прашања", "Браво!");
+                    this.Close();
                     return true;
                    
                 }
                 else
                 {
-                    rezultat=10*brT;
-                    TrainYourBrain.CstYes.Show("Ги одговоривте прашањата во предвиденото време", "Браво!");
-                    timer1.Stop();
+                     timer1.Stop();
                     win.Play();
                    // lblRez.Text = rezultat.ToString();
                     disabled();
-                   
+                    rezultat=10*brT;
+                    TrainYourBrain.CstYes.Show("Ги одговоривте прашањата во предвиденото време", "Браво!");
+                    this.Close();
                     return true;
                 }
             }
@@ -169,6 +170,7 @@ namespace Quiz
             {
                 Novo();
             }
+    
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -193,12 +195,14 @@ namespace Quiz
            g.FillPie(b1,150, 250, 95, 95, 0, ci);
            g.DrawEllipse(p, 150, 250, 95, 95);
            if (ci == 360)
-           {              
+           {
+               timer1.Stop();
                lose.Play();
-               TrainYourBrain.CstYes.Show("Вашeто време истече", ":(");               
                rezultat = 0;
                disabled();
-               timer1.Stop();
+               
+               TrainYourBrain.CstYes.Show("Вашeто време истече", ":(");
+               this.Close();
            }
 
            

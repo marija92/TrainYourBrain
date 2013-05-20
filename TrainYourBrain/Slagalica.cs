@@ -158,11 +158,13 @@ namespace TYB_Slagalica
             {
                 timer1.Stop();
                 lose.Play();
-                TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
                 lblRez.Text = "0";
                 rezultat = 0;
                 lblRez.Text = rezultat.ToString();
                 Disabled();
+                TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
+                this.Close();
+                
             }
 
 
@@ -173,15 +175,6 @@ namespace TYB_Slagalica
 
         
 
-        
-
-        private void Slagalica_Paint_1(object sender, PaintEventArgs e)
-        {
-            g = this.CreateGraphics();
-            g.FillEllipse(b, 230, 320, 90, 90);
-           
-
-        }
 
         private void Slagalica_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -192,25 +185,35 @@ namespace TYB_Slagalica
         {
             if (isPobeda())
             {
-                win.Play();
-                TrainYourBrain.CstYes.Show("Честитки!", "Браво!");
-                lblRez.Text = 100.ToString();
-                rezultat = 100;
                 timer1.Stop();
+                win.Play();
+                lblRez.Text = 100.ToString();
+                rezultat = 100;              
                 Disabled();
+                TrainYourBrain.CstYes.Show("Честитки!", "Браво!");
+                this.Close();
 
             }
             else
             {
+                timer1.Stop();
                 lose.Play();
-                TrainYourBrain.CstYes.Show("Повеќе срееќа следниот пат", ":(");
                 lblRez.Text = 0.ToString();
                 rezultat = 0;
-                timer1.Stop();
                 Disabled();
+                TrainYourBrain.CstYes.Show("Повеќе срееќа следниот пат", ":(");
+                this.Close();
 
             }
 
+        }
+
+        private void Slagalica_Paint(object sender, PaintEventArgs e)
+        {
+            g = this.CreateGraphics();
+            g.FillEllipse(b, 230, 320, 90, 90);
+            //g.FillPie(b1, 230, 320, 90, 90, 0, ci);
+            //g.DrawEllipse(p, 230, 320, 90, 90);
         }
 
        

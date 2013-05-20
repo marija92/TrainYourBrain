@@ -51,20 +51,23 @@ namespace Calculate
             if (label1.Text.Equals(textBox2.Text))
             {
                 win.Play();
-                TrainYourBrain.CstYes.Show("Вашиот резултат е точен", "Браво!");
                 timer1.Stop();
                 label9.Text = "100";
                 rezultat = 100;
+                TrainYourBrain.CstYes.Show("Вашиот резултат е точен", "Браво!");
+                
+                this.Close();
                 
             }
             else 
             {
 
                 lose.Play();
-                TrainYourBrain.CstYes.Show("Вашиот резултат е нточен", ":(");
                 label9.Text = "0";
                 timer1.Stop();
                 rezultat = 0;
+                TrainYourBrain.CstYes.Show("Вашиот резултат е нточен", ":(");
+                this.Close();
 
             }
             
@@ -393,10 +396,11 @@ namespace Calculate
             {
                 timer1.Stop();
                 lose.Play();
-                TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
                 label9.Text = "0";
-                rezultat = 0;             
+                rezultat = 0;
                 Disabled();
+                TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
+                this.Close();
             }
            
                 

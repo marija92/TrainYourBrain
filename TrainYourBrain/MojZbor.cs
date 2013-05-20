@@ -251,10 +251,10 @@ namespace TYB_MojZbor
                 if (flag == 1)
                 {
                     win.Play();
-                    TrainYourBrain.CstYes.Show("Вашиот збор е точен","Браво!"); ;
                     lblNas.Text = NAJdolg;
                     int brN = 0;
                     timer1.Stop();
+                    
                     foreach (char c in lblNas.Text)
                     {
                         brN++;
@@ -267,18 +267,25 @@ namespace TYB_MojZbor
                     int razlika = brN - brO;
                     rezultat = Math.Abs( 100 - razlika * 10);
                     lblRez.Text = rezultat.ToString();
+                    string pom = "Вашиот збор е точен. Најдолгиот збор е: " + NAJdolg;
+                    TrainYourBrain.CstYes.Show(pom, "Браво!"); ;
+                    this.Close();
                    
-                    timer1.Stop();
                 }
                 else
                 {
                     lose.Play();
-                    TrainYourBrain.CstYes.Show("Вашиот збор е неточен", ":(");
+                    timer1.Stop();
                     lblRez.Text = "0";
-                    timer1.Stop();
                     lblNas.Text = NAJdolg;
-                    timer1.Stop();
+                    string pom="Вашиот збор е неточен. Најдолгиот збор е: "+NAJdolg;
+                    TrainYourBrain.CstYes.Show(pom, ":(");
+                   
+                   
+              
                 }
+                
+                this.Close();
             }
         
 
@@ -315,12 +322,14 @@ namespace TYB_MojZbor
             {
                 timer1.Stop();
                 lose.Play();
-                TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
-                lblRez.Text = "0";
-               
                 rezultat = 0;
                 lblNas.Text = NAJdolg;
                 Disabled();
+                lblRez.Text = "0";
+                string pom = "Вашето време истече. Најдолгиот збор е: " + NAJdolg;
+                TrainYourBrain.CstYes.Show(pom, ":(");
+                
+           
             }
 
             btnKraj.Focus();

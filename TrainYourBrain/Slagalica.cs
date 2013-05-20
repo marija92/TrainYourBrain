@@ -179,9 +179,7 @@ namespace TYB_Slagalica
         {
             g = this.CreateGraphics();
             g.FillEllipse(b, 230, 320, 90, 90);
-           // g.FillPie(b1, 230, 320, 90, 90, 0, ci);
-           // g.DrawEllipse(p, 230, 320, 90, 90);
-
+           
 
         }
 

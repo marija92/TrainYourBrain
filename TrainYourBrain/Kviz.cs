@@ -23,6 +23,7 @@ namespace Quiz
         Pen p;
         Brush b = new SolidBrush(Color.IndianRed);
         public float ci = 5;
+        int flag = 1;
         
         LinkedList<Prasanje> kviz = new LinkedList<Prasanje>();
         bool odg;
@@ -192,6 +193,7 @@ namespace Quiz
            p = new Pen(Color.White, 2);
 
            ci = ci + 5;
+           g = this.CreateGraphics();
            g.FillPie(b1,150, 250, 95, 95, 0, ci);
            g.DrawEllipse(p, 150, 250, 95, 95);
            if (ci == 360)
@@ -211,8 +213,18 @@ namespace Quiz
 
         private void Kviz_Paint(object sender, PaintEventArgs e)
         {
-            g = this.CreateGraphics();
-            g.FillEllipse(b, 150, 250, 95, 95);
+            if (flag==1)
+            {
+                g = this.CreateGraphics();
+                g.FillEllipse(b, 150, 250, 95, 95);
+                flag = 0;
+            }
+           
+        }
+
+        private void Kviz_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timer1.Stop();
         }
     }
 }

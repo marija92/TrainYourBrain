@@ -24,21 +24,26 @@ namespace TYB_Slagalica
         public float ci = 5;
         Brush b1;
         public int rezultat = 0;
+        int flag = 1;
         List<Button> list;
         Dictionary<Button, List<Button>> sosedi;
         TrainYourBrain.CstYes y = new TrainYourBrain.CstYes();
         public Slagalica()
         {
             InitializeComponent();
+           
             list = new List<Button>();
             sosedi = new Dictionary<Button, List<Button>>();
+            g = this.CreateGraphics();
+            g.FillEllipse(b, 230, 320, 90, 90);
         }
 
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
+                timer1.Start();
                 list.Add(btn1);
                 list.Add(btn2);
                 list.Add(btn3);
@@ -70,6 +75,8 @@ namespace TYB_Slagalica
                sosedi[btn8] = new List<Button>(new Button[] { btn7, btn9, btn5 });
                sosedi[btn9] = new List<Button>(new Button[] { btn8, btn6 });
 
+               g = this.CreateGraphics();
+               g.FillEllipse(b, 230, 320, 90, 90);
             }
 
         }
@@ -150,8 +157,11 @@ namespace TYB_Slagalica
             b1 = new SolidBrush(Color.Wheat);
             p = new Pen(Color.White, 2);
             ci = ci + 5;
+            g = this.CreateGraphics();
+          
             g.FillPie(b1, 230, 320, 90, 90, 0, ci);
             g.DrawEllipse(p, 230, 320, 90, 90);
+           // Invalidate();
 
 
             if (ci == 360)
@@ -210,10 +220,20 @@ namespace TYB_Slagalica
 
         private void Slagalica_Paint(object sender, PaintEventArgs e)
         {
-            g = this.CreateGraphics();
-            g.FillEllipse(b, 230, 320, 90, 90);
-            //g.FillPie(b1, 230, 320, 90, 90, 0, ci);
-            //g.DrawEllipse(p, 230, 320, 90, 90);
+            //g = this.CreateGraphics();
+            //g.FillEllipse(b, 230, 320, 90, 90);
+           
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            if (flag == 1)
+            {
+                g = this.CreateGraphics();
+                g.FillEllipse(b, 230, 320, 90, 90);
+                flag = 0;
+            }
+           
         }
 
        

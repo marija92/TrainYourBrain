@@ -139,6 +139,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Kviz";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Kviz_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Kviz_Paint);
             this.ResumeLayout(false);

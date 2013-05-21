@@ -66,7 +66,7 @@ namespace Calculate
                 label9.Text = "0";
                 timer1.Stop();
                 rezultat = 0;
-                TrainYourBrain.CstYes.Show("Вашиот резултат е нточен", ":(");
+                TrainYourBrain.CstYes.Show("Вашиот резултат е неточен", ":(");
                 this.Close();
 
             }

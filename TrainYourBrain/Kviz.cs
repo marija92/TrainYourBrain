@@ -83,7 +83,7 @@ namespace Quiz
 
         }
 
-        public void Novo()
+        public void Novo() //generiranje na novo prasanje
         {
             Random r = new Random(); 
             int pr=r.Next(0,kviz.Count);
@@ -91,7 +91,7 @@ namespace Quiz
             odg = kviz.ElementAt(pr).odgovor;
             kviz.Remove(kviz.ElementAt(pr));
         }
-        public bool isEnd()
+        public bool isEnd() //proveruva dali e kraj na igrata
         {
             if (br == 10) 
             {
@@ -124,7 +124,7 @@ namespace Quiz
         }
 
         
-        public void isTrue(bool b)
+        public void isTrue(bool b) //dali prasanjeto e tocno
         {
             if (odg == b)
             {

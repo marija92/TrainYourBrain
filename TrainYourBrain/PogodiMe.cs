@@ -84,10 +84,6 @@ namespace Mastermind
                        
         }
 
-        private static readonly int TIME = 150;
-        private int timeElapsed;
-
-
         int[] komb = new int[4];
 
         private void newGame()
@@ -99,15 +95,13 @@ namespace Mastermind
             komb[2] = r.Next(1, 7);
             komb[3] = r.Next(1, 7);
 
-            enabled();
-            timeElapsed = 0;
-            updateTime();
-           
+            enabled();           
             timer1.Start();            
         }
 
         private void endGame(int i)
         {
+            timer1.Stop();
             if (i == 1)
             {
                 lose.Play();
@@ -138,7 +132,7 @@ namespace Mastermind
                
             }
 
-            timer1.Stop();
+            
             btnSubmit.Enabled = false;
             pb1.Enabled = false;
             pb2.Enabled = false;
@@ -149,7 +143,7 @@ namespace Mastermind
         }
 
         int kolona = 0;
-        public void Niza(int broj)
+        public void Niza(int broj)  //f-ja koja sto vo pomosna niza go smestuva dadeniot simbol(broj) za proverka
         {
            //kolona %= 4;
            pomosna[rows][kolona] = broj;
@@ -158,7 +152,7 @@ namespace Mastermind
         int tocni = 0;
         int ima = 0;
 
-        public void Check(LinkedList<Button> b)
+        public void Check(LinkedList<Button> b) //fja za proverka na kombinacijata
         {
             int[] proveri = new int[4];
             for (int i = 0; i < 4; i++)
@@ -276,12 +270,9 @@ namespace Mastermind
            }
        }
 
-       private void updateTime()
-       {
-           int left = TIME - timeElapsed;
-       }
+      
 
-       public Button popolni()
+       public Button popolni() //f-ja za naogjanje na sledno slobdno pole pri popolnuvanjeto
        {
            for (int i = 0; i<4; i++)
            {
@@ -489,7 +480,7 @@ namespace Mastermind
            CanSubmit();
        }
 
-       public void enabled()
+       public void enabled() //gi pravi aktivni kopcinjata od tekovnata redica
        {
            for (int i = 0; i < 4; i++)
            {
@@ -498,7 +489,7 @@ namespace Mastermind
            }
        }
 
-       public void disabled()
+       public void disabled() //gi pravi neaktivni kopcinjata od veke proverenata redica
        {
            for (int i = 0; i < 4; i++)
            {
@@ -507,7 +498,7 @@ namespace Mastermind
            }
        }
 
-       public void CanSubmit()
+       public void CanSubmit() //dali kopceto prati da bide aktivno ili ne
        {
            int count = 0;
            for (int i = 0; i<4; i++)
@@ -524,7 +515,7 @@ namespace Mastermind
 
       
 
-       public void PaintBall(bool t, bool n,int brT, int brN)
+       public void PaintBall(bool t, bool n,int brT, int brN) // iscrtuvanje na krugcinja za rezultatot
        {
            Graphics g; 
            if (rows == 0)
@@ -580,7 +571,7 @@ namespace Mastermind
 
        }
 
-       public string TocnaKombinacija()
+       public string TocnaKombinacija() //pomosen string za pecatenje na tocnata kombinacija
        {
            string a="\n";
            for (int i = 0; i < komb.Length; i++)

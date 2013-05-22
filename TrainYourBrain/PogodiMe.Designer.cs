@@ -671,6 +671,7 @@
             this.Name = "PogodiMe";
             this.Text = "Погоди ме";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PogodiMe_FormClosed);
+            this.Load += new System.EventHandler(this.PogodiMe_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.PogodiMe_Paint_1);
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();

@@ -158,8 +158,8 @@ namespace TYB_Slagalica
             p = new Pen(Color.White, 2);
             ci = ci + 5;
             g = this.CreateGraphics();
-          
-            g.FillPie(b1, 230, 320, 90, 90, 0, ci);
+
+            g.FillPie(b1, 230, 320, 90, 90, -90, ci);
             g.DrawEllipse(p, 230, 320, 90, 90);
            // Invalidate();
 

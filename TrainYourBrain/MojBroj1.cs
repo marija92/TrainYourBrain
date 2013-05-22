@@ -389,7 +389,7 @@ namespace Calculate
             Brush b1 = new SolidBrush(Color.Wheat);
             p = new Pen(Color.White, 2);
             ci = ci + 5;
-            g.FillPie(b1, 210, 235, 90, 90, 0, ci);
+            g.FillPie(b1, 210, 235, 90, 90, -90, ci);
             g.DrawEllipse(p, 210, 235, 90, 90);
 
             if (ci == 360)

@@ -314,7 +314,7 @@ namespace TYB_MojZbor
             p = new Pen(Color.White, 2);         
            
                 ci = ci + 5;
-                g.FillPie(b1, 190, 125, 70, 70, 0, ci);
+                g.FillPie(b1, 190, 125, 70, 70, -90, ci);
                 g.DrawEllipse(p, 190, 125, 70, 70);              
             
              

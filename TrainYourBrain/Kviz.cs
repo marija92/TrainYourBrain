@@ -194,7 +194,7 @@ namespace Quiz
 
            ci = ci + 5;
            g = this.CreateGraphics();
-           g.FillPie(b1,150, 250, 95, 95, 0, ci);
+           g.FillPie(b1, 150, 250, 95, 95, -90, ci);
            g.DrawEllipse(p, 150, 250, 95, 95);
            if (ci == 360)
            {

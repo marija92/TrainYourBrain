@@ -215,19 +215,21 @@ namespace TYB_MojZbor
 
         private void btnKraj_Click(object sender, EventArgs e)
         {
-          
-            if(TrainYourBrain.CstYes.Show("Дали сте сигурни?", "???")==System.Windows.Forms.DialogResult.Yes)
+            if (lblVas.Text.Trim().Length > 0)
             {
-                Disabled();
-                string ime = lblVas.Text;
-                string path = TrainYourBrain.Properties.Resources.baza;
-                
-                string[] redovi=path.Split(new char[]{'\n','\r'});
-                int flag = 0;
-                timer1.Stop();
-                try
+
+                if (TrainYourBrain.CstYes.Show("Дали сте сигурни?", "???") == System.Windows.Forms.DialogResult.Yes)
                 {
-                    
+                    Disabled();
+                    string ime = lblVas.Text;
+                    string path = TrainYourBrain.Properties.Resources.baza;
+
+                    string[] redovi = path.Split(new char[] { '\n', '\r' });
+                    int flag = 0;
+                    timer1.Stop();
+                    try
+                    {
+
                         flag = 0;
                         for (int i = 0; i < redovi.Length; i++)
                         {
@@ -237,57 +239,63 @@ namespace TYB_MojZbor
                             if (ime.Equals(s))
                             {
                                 flag = 1;
-                                
+
                                 break;
                             }
                         }
-                        
-                    
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("The process failed: {0}", ex.ToString());
-                }
-                if (flag == 1)
-                {
-                    win.Play();
-                    lblNas.Text = NAJdolg;
-                    int brN = 0;
-                    timer1.Stop();
-                    
-                    foreach (char c in lblNas.Text)
-                    {
-                        brN++;
+
+
                     }
-                    int brO = 0;
-                    foreach (char c in lblVas.Text)
+                    catch (Exception ex)
                     {
-                        brO++;
+                        Console.WriteLine("The process failed: {0}", ex.ToString());
                     }
-                    int razlika = brN - brO;
-                    rezultat = Math.Abs( 100 - razlika * 10);
-                    lblRez.Text = rezultat.ToString();
-                    string pom = "Вашиот збор е точен. Најдолгиот збор е: " + NAJdolg;
-                    TrainYourBrain.CstYes.Show(pom, "Браво!"); ;
+                    if (flag == 1)
+                    {
+                        win.Play();
+                        lblNas.Text = NAJdolg;
+                        int brN = 0;
+                        timer1.Stop();
+
+                        foreach (char c in lblNas.Text)
+                        {
+                            brN++;
+                        }
+                        int brO = 0;
+                        foreach (char c in lblVas.Text)
+                        {
+                            brO++;
+                        }
+                        int razlika = brN - brO;
+                        rezultat = Math.Abs(100 - razlika * 10);
+                        lblRez.Text = rezultat.ToString();
+                        string pom = "Вашиот збор е точен. Најдолгиот збор е: " + NAJdolg;
+                        TrainYourBrain.CstYes.Show(pom, "Браво!"); ;
+                        this.Close();
+
+                    }
+                    else
+                    {
+                        lose.Play();
+                        timer1.Stop();
+                        lblRez.Text = "0";
+                        lblNas.Text = NAJdolg;
+                        string pom = "Вашиот збор е неточен. Најдолгиот збор е: " + NAJdolg;
+                        TrainYourBrain.CstYes.Show(pom, ":(");
+
+
+
+                    }
+
                     this.Close();
-                   
                 }
-                else
-                {
-                    lose.Play();
-                    timer1.Stop();
-                    lblRez.Text = "0";
-                    lblNas.Text = NAJdolg;
-                    string pom="Вашиот збор е неточен. Најдолгиот збор е: "+NAJdolg;
-                    TrainYourBrain.CstYes.Show(pom, ":(");
-                   
-                   
-              
-                }
-                
-                this.Close();
             }
-        
+            else
+            {
+                string pom = "Внесете збор!";
+                TrainYourBrain.CstYes.Show(pom, ":(");
+            
+            }
 
     }
         private void Disabled()

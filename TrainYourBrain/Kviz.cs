@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
+using TrainYourBrain;
 
 namespace Quiz
 {
@@ -176,6 +178,34 @@ namespace Quiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            try
+            {
+                StreamReader sr = new StreamReader("../../theme.txt");
+                LoadedTheme.odbranaTema = new CustomTheme(sr.ReadLine());
+                CustomTheme momentalnaTema = LoadedTheme.odbranaTema;
+                if (momentalnaTema != null)
+                {
+                    foreach (Control c in this.Controls)
+                    {
+                        if (c is Button || c is TextBox)
+                        {
+                            c.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
+                            c.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                        }
+                        else if (c is Label)
+                        {
+                            c.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                            c.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
+                        }
+                    }
+                    BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                }
+                sr.Close();
+            }
+            catch (FileNotFoundException excep)
+            {
+            }
+            
             Novo();
             textBox1.Select(0, 0);
             timeElapsed = 0;

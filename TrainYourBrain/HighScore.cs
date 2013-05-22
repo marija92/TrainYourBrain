@@ -96,13 +96,10 @@ namespace TrainYourBrain
 
         private void HighScore_Load(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader("../../highscore.txt");
-            textBox2.Text = sr.ReadToEnd();
-            sr.Dispose();
-            Clear();
+
             try
             {
-                sr = new StreamReader("../../theme.txt");
+                StreamReader sr = new StreamReader("../../theme.txt");
                 LoadedTheme.odbranaTema = new CustomTheme(sr.ReadLine());
                 CustomTheme momentalnaTema = LoadedTheme.odbranaTema;
                 if (momentalnaTema != null)
@@ -123,6 +120,40 @@ namespace TrainYourBrain
                     BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
                 }
                 sr.Close();
+            }
+            catch (FileNotFoundException excep)
+            {
+            }
+            
+            
+            
+            StreamReader srr = new StreamReader("../../highscore.txt");
+            textBox2.Text = srr.ReadToEnd();
+            srr.Dispose();
+            Clear();
+            try
+            {
+                srr = new StreamReader("../../theme.txt");
+                LoadedTheme.odbranaTema = new CustomTheme(srr.ReadLine());
+                CustomTheme momentalnaTema = LoadedTheme.odbranaTema;
+                if (momentalnaTema != null)
+                {
+                    foreach (Control c in this.Controls)
+                    {
+                        if (c is Button || c is TextBox)
+                        {
+                            c.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
+                            c.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                        }
+                        else if (c is Label)
+                        {
+                            c.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                            c.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
+                        }
+                    }
+                    BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                }
+                srr.Close();
             }
             catch (FileNotFoundException excep)
             {

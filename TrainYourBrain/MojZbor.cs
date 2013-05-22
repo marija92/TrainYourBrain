@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
+using TrainYourBrain;
 
 
 namespace TYB_MojZbor
@@ -89,7 +90,33 @@ namespace TYB_MojZbor
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            try
+            {
+                StreamReader sr = new StreamReader("../../theme.txt");
+                LoadedTheme.odbranaTema = new CustomTheme(sr.ReadLine());
+                CustomTheme momentalnaTema = LoadedTheme.odbranaTema;
+                if (momentalnaTema != null)
+                {
+                    foreach (Control cc in this.Controls)
+                    {
+                        if (cc is Button || cc is TextBox)
+                        {
+                            cc.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
+                            cc.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                        }
+                        else if (cc is Label)
+                        {
+                            cc.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                            cc.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
+                        }
+                    }
+                    BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                }
+                sr.Close();
+            }
+            catch (FileNotFoundException excep)
+            {
+            }
            
             
             

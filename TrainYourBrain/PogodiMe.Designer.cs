@@ -200,8 +200,8 @@
             this.btn21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn21.Enabled = false;
             this.btn21.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
-            this.btn21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
-            this.btn21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.btn21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.btn21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btn21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn21.ForeColor = System.Drawing.Color.White;
             this.btn21.Location = new System.Drawing.Point(12, 68);

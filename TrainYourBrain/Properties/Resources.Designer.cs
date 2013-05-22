@@ -119,16 +119,7 @@ namespace TrainYourBrain.Properties {
         ///`ржаник
         ///`ржаница
         ///`ржаник
-        ///`ржаница
-        ///`ржаник
-        ///`ржан
-        ///`ржи
-        ///`ржанов
-        ///`ржан
-        ///`ржанов
-        ///`ржан
-        ///`ржи
-        ///`ржен [rest of string was truncated]&quot;;.
+        ///`ржаница [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string baza {
             get {
@@ -225,6 +216,18 @@ namespace TrainYourBrain.Properties {
             get {
                 object obj = ResourceManager.GetObject("symbol_48940_640", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zenska
+        ///#F5DEB3$#CD5C5C$#FFFFFF
+        ///Maska
+        ///#CD5C5C$#F5DEB3$#FFFFFF.
+        /// </summary>
+        internal static string temi {
+            get {
+                return ResourceManager.GetString("temi", resourceCulture);
             }
         }
         

@@ -44,6 +44,7 @@
             this.резултатиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.правилаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.подесувањаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -264,13 +265,21 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.новаИграToolStripMenuItem,
             this.резултатиToolStripMenuItem,
-            this.правилаToolStripMenuItem});
+            this.правилаToolStripMenuItem,
+            this.подесувањаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
             this.menuStrip1.Size = new System.Drawing.Size(331, 25);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // подесувањаToolStripMenuItem
+            // 
+            this.подесувањаToolStripMenuItem.Name = "подесувањаToolStripMenuItem";
+            this.подесувањаToolStripMenuItem.Size = new System.Drawing.Size(87, 19);
+            this.подесувањаToolStripMenuItem.Text = "Подесувања";
+            this.подесувањаToolStripMenuItem.Click += new System.EventHandler(this.подесувањаToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -322,6 +331,7 @@
         private System.Windows.Forms.ToolStripMenuItem резултатиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem правилаToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem подесувањаToolStripMenuItem;
     }
 }
 

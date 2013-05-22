@@ -177,7 +177,7 @@ namespace Quiz
         private void Form1_Load(object sender, EventArgs e)
         {
             Novo();
-            
+            textBox1.Select(0, 0);
             timeElapsed = 0;
            // updateTime();
            
@@ -225,6 +225,11 @@ namespace Quiz
         private void Kviz_FormClosed(object sender, FormClosedEventArgs e)
         {
             timer1.Stop();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

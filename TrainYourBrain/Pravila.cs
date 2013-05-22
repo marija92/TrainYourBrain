@@ -15,5 +15,10 @@ namespace TrainYourBrain
         {
             InitializeComponent();
         }
+
+        private void Pravila_Load(object sender, EventArgs e)
+        {
+            textBox1.Select(0, 0);
+        }
     }
 }

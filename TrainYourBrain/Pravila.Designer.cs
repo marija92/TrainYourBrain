@@ -92,7 +92,7 @@
             this.textBox2.Size = new System.Drawing.Size(265, 65);
             this.textBox2.TabIndex = 6;
             this.textBox2.Text = "МОЈ БРОЈ\r\nКористејќи ги дадените броеви и оператори потребно е да формирате матем" +
-    "атички израз кој ќе го задоволува дадениот број.";
+                "атички израз кој ќе го задоволува дадениот број.";
             // 
             // textBox1
             // 
@@ -107,7 +107,7 @@
             this.textBox1.Size = new System.Drawing.Size(265, 65);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "МОЈ ЗБОР\r\nОд понудените букви составете збор. Колку е подолг зборот толку повеќе " +
-    "поени добивате.\r\n";
+                "поени добивате.\r\n";
             // 
             // label1
             // 
@@ -134,6 +134,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Pravila";
             this.Text = "Правила";
+            this.Load += new System.EventHandler(this.Pravila_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

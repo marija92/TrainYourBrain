@@ -52,7 +52,7 @@
             this.btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
             this.btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.Color.White;
             this.btn1.Location = new System.Drawing.Point(17, 26);
             this.btn1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -93,7 +93,7 @@
             this.btn3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
             this.btn3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.White;
             this.btn3.Location = new System.Drawing.Point(229, 26);
             this.btn3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -111,7 +111,7 @@
             this.btn2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
             this.btn2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.White;
             this.btn2.Location = new System.Drawing.Point(123, 26);
             this.btn2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -129,7 +129,7 @@
             this.btn5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
             this.btn5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.ForeColor = System.Drawing.Color.White;
             this.btn5.Location = new System.Drawing.Point(123, 126);
             this.btn5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -147,7 +147,7 @@
             this.btn6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
             this.btn6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.ForeColor = System.Drawing.Color.White;
             this.btn6.Location = new System.Drawing.Point(229, 126);
             this.btn6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -165,7 +165,7 @@
             this.btn4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
             this.btn4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.White;
             this.btn4.Location = new System.Drawing.Point(17, 126);
             this.btn4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -183,7 +183,7 @@
             this.btn8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
             this.btn8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.ForeColor = System.Drawing.Color.White;
             this.btn8.Location = new System.Drawing.Point(123, 226);
             this.btn8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -201,7 +201,7 @@
             this.btn9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
             this.btn9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.ForeColor = System.Drawing.Color.White;
             this.btn9.Location = new System.Drawing.Point(229, 226);
             this.btn9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -219,7 +219,7 @@
             this.btn7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
             this.btn7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.ForeColor = System.Drawing.Color.White;
             this.btn7.Location = new System.Drawing.Point(17, 226);
             this.btn7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -276,7 +276,6 @@
             this.Text = "Слагалица";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Slagalica_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
-           // this.Paint += new System.Windows.Forms.PaintEventHandler(this.Slagalica_Paint_1);
             this.ResumeLayout(false);
 
         }

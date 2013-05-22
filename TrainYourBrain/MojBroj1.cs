@@ -20,7 +20,11 @@ namespace Calculate
         Graphics g;
         Pen p;
         Brush b = new SolidBrush(Color.IndianRed);
+
         public int rezultat = 0;
+        public double razlika = 0;
+
+        
         public float ci = 5;
         public MojBroj1()
         {
@@ -29,6 +33,7 @@ namespace Calculate
 
         
             Stack<Button> stack = new Stack<Button>();
+            
 
 
 
@@ -36,6 +41,7 @@ namespace Calculate
         Random rnd = new Random();
         private void button1_Click_1(object sender, EventArgs e)
         {
+            double br1, br2;
             cl.Play();
             decimal d;
             timer1.Stop();
@@ -47,6 +53,8 @@ namespace Calculate
             {
                 label1.Text = "";
             }
+            br1 = Convert.ToDouble(label1.Text);
+            br2 = Convert.ToDouble(textBox2.Text);
 
             if (label1.Text.Equals(textBox2.Text))
             {
@@ -55,13 +63,42 @@ namespace Calculate
                 label9.Text = "100";
                 rezultat = 100;
                 TrainYourBrain.CstYes.Show("Вашиот резултат е точен", "Браво!");
-                
-                this.Close();
-                
-            }
-            else 
-            {
 
+                this.Close();
+            }
+            else if (((br1-br2)>0&&(br1-br2)<=5) || ((br2-br1)>0&&(br2-br1)<=5))
+            {
+                win.Play();
+                timer1.Stop();
+                label9.Text = "90";
+                rezultat = 90;
+                TrainYourBrain.CstYes.Show("Вашиот резултат е делумно точен", "Браво!");
+
+                this.Close();
+            }
+            else if (((br1-br2)>0&&(br1-br2)<=10) || ((br2-br1)>0&&(br2-br1)<=10))
+            {
+                win.Play();
+                timer1.Stop();
+                label9.Text = "80";
+                rezultat = 80;
+                TrainYourBrain.CstYes.Show("Вашиот резултат е делумно точен", "Браво!");
+
+                this.Close();
+            }
+            else if (((br1-br2)>0&&(br1-br2)<=20) || ((br2-br1)>0&&(br2-br1)<=20))
+            {
+                win.Play();
+                timer1.Stop();
+                label9.Text = "60";
+                rezultat = 60;
+                TrainYourBrain.CstYes.Show("Вашиот резултат е делумно точен", "Браво!");
+
+                this.Close();
+            }
+            else
+            {
+                
                 lose.Play();
                 label9.Text = "0";
                 timer1.Stop();
@@ -441,6 +478,11 @@ namespace Calculate
                 private void MojBroj1_FormClosed(object sender, FormClosedEventArgs e)
                 {
                     timer1.Stop();
+                }
+
+                private void label9_Click(object sender, EventArgs e)
+                {
+
                 }
 
                

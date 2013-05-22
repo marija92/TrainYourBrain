@@ -395,6 +395,7 @@
             this.label9.TabIndex = 38;
             this.label9.Text = "label9";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // timer1
             // 

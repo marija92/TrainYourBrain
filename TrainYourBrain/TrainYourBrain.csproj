@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -111,6 +114,12 @@
     <Compile Include="Slagalica.designer.cs">
       <DependentUpon>Slagalica.cs</DependentUpon>
     </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CstYes.resx">
       <DependentUpon>CstYes.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +160,9 @@
     <EmbeddedResource Include="Slagalica.resx">
       <DependentUpon>Slagalica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,6 +187,8 @@
     <None Include="Resources\greska.wav" />
     <None Include="Resources\click.wav" />
     <None Include="Resources\baza.txt" />
+    <Content Include="favicon.ico" />
+    <None Include="Resources\Logo_FINKI_MK.jpg" />
     <Content Include="Resources\slika1.png" />
     <Content Include="Resources\slika2.png" />
     <Content Include="Resources\slika3.png" />
@@ -182,6 +196,7 @@
     <Content Include="Resources\slika5.png" />
     <Content Include="Resources\slika6.png" />
     <Content Include="Resources\Spade.png" />
+    <None Include="Resources\splash_back.png" />
     <Content Include="Resources\star.png" />
     <Content Include="Resources\symbol-48940_640.png" />
   </ItemGroup>

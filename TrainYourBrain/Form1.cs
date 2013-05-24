@@ -143,9 +143,16 @@ namespace TrainYourBrain
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            showSplash();
             changeTheme();   
         }
-
+        private void showSplash()
+        {
+            this.Visible = false;
+            SplashScreen ss = new SplashScreen();
+            ss.ShowDialog();
+            this.Visible = true;
+        }
         private void новаИграToolStripMenuItem_Click(object sender, EventArgs e)
         {
             btnMojBroj.Enabled = true;

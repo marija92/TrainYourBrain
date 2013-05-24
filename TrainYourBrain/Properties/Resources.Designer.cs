@@ -150,6 +150,13 @@ namespace TrainYourBrain.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Logo_FINKI_MK {
+            get {
+                object obj = ResourceManager.GetObject("Logo_FINKI_MK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.IO.UnmanagedMemoryStream lose {
             get {
                 return ResourceManager.GetStream("lose", resourceCulture);
@@ -205,6 +212,13 @@ namespace TrainYourBrain.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap splash_back {
+            get {
+                object obj = ResourceManager.GetObject("splash_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap star {
             get {
                 object obj = ResourceManager.GetObject("star", resourceCulture);
@@ -220,10 +234,10 @@ namespace TrainYourBrain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zenska
+        ///   Looks up a localized string similar to Candy
         ///#F5DEB3$#CD5C5C$#FFFFFF
-        ///Maska
-        ///#CD5C5C$#F5DEB3$#FFFFFF.
+        ///Batman
+        ///#999999$#4B66B8$#FFFFFF.
         /// </summary>
         internal static string temi {
             get {

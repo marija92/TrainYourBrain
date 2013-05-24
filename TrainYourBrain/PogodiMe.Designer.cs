@@ -670,6 +670,7 @@
             this.Controls.Add(this.btn12);
             this.Controls.Add(this.btn11);
             this.Name = "PogodiMe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Погоди ме";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PogodiMe_FormClosed);
             this.Load += new System.EventHandler(this.PogodiMe_Load);

@@ -352,7 +352,8 @@
             this.Controls.Add(this.btnL7);
             this.Controls.Add(this.btnL1);
             this.Name = "MojZbor";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Мој збор";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MojZbor_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);

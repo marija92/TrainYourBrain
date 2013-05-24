@@ -238,7 +238,6 @@
             this.label7.Size = new System.Drawing.Size(135, 36);
             this.label7.TabIndex = 17;
             this.label7.Text = "Вкупно:";
-            
             // 
             // новаИграToolStripMenuItem
             // 
@@ -305,6 +304,7 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Train Your Brain";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

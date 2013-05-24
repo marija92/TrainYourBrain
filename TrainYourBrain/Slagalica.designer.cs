@@ -273,6 +273,7 @@
             this.Controls.Add(this.lblRez);
             this.Controls.Add(this.btn1);
             this.Name = "Slagalica";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Слагалица";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Slagalica_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);

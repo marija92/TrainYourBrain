@@ -85,6 +85,7 @@
             this.ForeColor = System.Drawing.Color.IndianRed;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HighScore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HighScore";
             this.Load += new System.EventHandler(this.HighScore_Load);
             this.ResumeLayout(false);

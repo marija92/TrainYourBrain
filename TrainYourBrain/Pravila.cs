@@ -33,6 +33,12 @@ namespace TrainYourBrain
                         {
                             c.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
                             c.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                            if (c is Button)
+                            {
+                                Button cb = (Button)c;
+                                cb.FlatAppearance.MouseOverBackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                                cb.FlatAppearance.BorderColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                            }
                         }
                         else if (c is Label)
                         {
@@ -46,6 +52,7 @@ namespace TrainYourBrain
             }
             catch (FileNotFoundException excep)
             {
+                Console.Write(excep.Data);
             }
         }
     }

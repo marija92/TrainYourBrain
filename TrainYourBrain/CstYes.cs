@@ -56,6 +56,12 @@ namespace TrainYourBrain
                         {
                             c.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
                             c.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                            if (c is Button)
+                            {
+                                Button cb = (Button)c;
+                                cb.FlatAppearance.MouseOverBackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                                cb.FlatAppearance.BorderColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                            }
                         }
                         else if (c is Label)
                         {
@@ -73,6 +79,11 @@ namespace TrainYourBrain
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

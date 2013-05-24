@@ -21,25 +21,25 @@ namespace Calculate
         SoundPlayer cl = new SoundPlayer(TrainYourBrain.Properties.Resources.click);
         Graphics g;
         Pen p;
-        Brush b = new SolidBrush(Color.IndianRed);
+        Brush b;
 
         public int rezultat = 0;
         public double razlika = 0;
 
-        
+
         public float ci = 5;
         public MojBroj1()
         {
             InitializeComponent();
         }
 
-        
-            Stack<Button> stack = new Stack<Button>();
-            
+
+        Stack<Button> stack = new Stack<Button>();
 
 
 
-          
+
+
         Random rnd = new Random();
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -68,7 +68,7 @@ namespace Calculate
 
                 this.Close();
             }
-            else if (((br1-br2)>0&&(br1-br2)<=5) || ((br2-br1)>0&&(br2-br1)<=5))
+            else if (((br1 - br2) > 0 && (br1 - br2) <= 5) || ((br2 - br1) > 0 && (br2 - br1) <= 5))
             {
                 win.Play();
                 timer1.Stop();
@@ -78,7 +78,7 @@ namespace Calculate
 
                 this.Close();
             }
-            else if (((br1-br2)>0&&(br1-br2)<=10) || ((br2-br1)>0&&(br2-br1)<=10))
+            else if (((br1 - br2) > 0 && (br1 - br2) <= 10) || ((br2 - br1) > 0 && (br2 - br1) <= 10))
             {
                 win.Play();
                 timer1.Stop();
@@ -88,7 +88,7 @@ namespace Calculate
 
                 this.Close();
             }
-            else if (((br1-br2)>0&&(br1-br2)<=20) || ((br2-br1)>0&&(br2-br1)<=20))
+            else if (((br1 - br2) > 0 && (br1 - br2) <= 20) || ((br2 - br1) > 0 && (br2 - br1) <= 20))
             {
                 win.Play();
                 timer1.Stop();
@@ -100,7 +100,7 @@ namespace Calculate
             }
             else
             {
-                
+
                 lose.Play();
                 label9.Text = "0";
                 timer1.Stop();
@@ -109,10 +109,10 @@ namespace Calculate
                 this.Close();
 
             }
-            
-        
 
-        
+
+
+
             button2.Enabled = false;
             button3.Enabled = false;
             button4.Enabled = false;
@@ -126,8 +126,8 @@ namespace Calculate
             button12.Enabled = false;
             button13.Enabled = false;
             textBox1.Text = "";
-            
-           
+
+
         }
         Button c;
         Button d;
@@ -136,7 +136,7 @@ namespace Calculate
 
             checkIf(button2);
             cl.Play();
-                        
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -144,25 +144,25 @@ namespace Calculate
 
             checkIf(button3);
             cl.Play();
-            
-         
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             checkIf(button4);
-             cl.Play();
-            
-            
+            cl.Play();
+
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             checkIf(button5);
             cl.Play();
-            
+
         }
-        
+
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -213,7 +213,7 @@ namespace Calculate
 
         private void button12_Click(object sender, EventArgs e)
         {
-          
+
             cl.Play();
             if (stack.Count > 0)
             {
@@ -227,8 +227,8 @@ namespace Calculate
                     stack.Push(d);
 
                 }
-                
-             
+
+
             }
             else
             {
@@ -254,8 +254,8 @@ namespace Calculate
             button6.Enabled = true;
             button7.Enabled = true;
             textBox1.Text = "";
-            
-            
+
+
             label9.Text = "";
             label1.Text = "";
         }
@@ -280,6 +280,13 @@ namespace Calculate
                         {
                             c.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
                             c.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                            if (c is Button)
+                            {
+                                Button cb = (Button)c;
+                                cb.FlatAppearance.MouseOverBackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                                cb.FlatAppearance.BorderColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                                cb.FlatAppearance.MouseDownBackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                            }
                         }
                         else if (c is Label)
                         {
@@ -294,9 +301,16 @@ namespace Calculate
             catch (FileNotFoundException excep)
             {
             }
-            
-            
-            
+
+            if (LoadedTheme.odbranaTema == null)
+            {
+                b = new SolidBrush(Color.IndianRed);
+            }
+            else
+            {
+                b = new SolidBrush(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.btn));
+            }
+
             button6.Text = rnd.Next(1, 99).ToString();
             button5.Text = rnd.Next(1, 9).ToString();
             button4.Text = rnd.Next(1, 9).ToString();
@@ -311,8 +325,8 @@ namespace Calculate
             button6.Enabled = true;
             button7.Enabled = true;
             textBox1.Text = "";
-            
-            
+
+
             label9.Text = "";
             label1.Text = "";
         }
@@ -343,46 +357,46 @@ namespace Calculate
 
                 if (c == button2)
                 {
-                   
-                        button2.Enabled = true;
-                    
+
+                    button2.Enabled = true;
+
                 }
-                else  if (c == button3)
+                else if (c == button3)
                 {
-                   
-                            button3.Enabled = true;
-                    
+
+                    button3.Enabled = true;
+
                 }
                 else if (c == button4)
                 {
-                   
-                        button4.Enabled = true;
-                    
+
+                    button4.Enabled = true;
+
                 }
                 else if (c == button5)
-                 {
-                   
-                         button5.Enabled = true;
-                     
-                 }
-                 else if (c == button6)
                 {
-                   
-                        button6.Enabled = true;
-                    
+
+                    button5.Enabled = true;
+
                 }
-                else  if (c == button7)
-                 {
-                    
-                         button7.Enabled = true;
-                     
-                 }
+                else if (c == button6)
+                {
 
-                 stack.Pop();
+                    button6.Enabled = true;
 
-                 
+                }
+                else if (c == button7)
+                {
+
+                    button7.Enabled = true;
+
+                }
+
+                stack.Pop();
+
+
             }
-            
+
         }
 
 
@@ -395,8 +409,7 @@ namespace Calculate
 
 
 
-                if  (c.Text==')'.ToString() || IsNumber(c.Text)==true)
-                
+                if (c.Text == ')'.ToString() || IsNumber(c.Text) == true)
                 {
                     textBox1.Text = textBox1.Text + b.Text;
 
@@ -404,7 +417,7 @@ namespace Calculate
                     stack.Push(d);
 
                 }
-                
+
             }
             else
             {
@@ -414,9 +427,9 @@ namespace Calculate
 
 
             }
-            
+
         }
-             public void checkIf(Button b)
+        public void checkIf(Button b)
         {
             if (stack.Count > 0)
             {
@@ -425,7 +438,7 @@ namespace Calculate
 
 
 
-               if (c.Text!=')'.ToString() && IsNumber(c.Text)==false)
+                if (c.Text != ')'.ToString() && IsNumber(c.Text) == false)
                 {
                     textBox1.Text = textBox1.Text + b.Text;
                     b.Enabled = false;
@@ -441,22 +454,32 @@ namespace Calculate
                 textBox1.Text = textBox1.Text + b.Text;
                 b.Enabled = false;
 
-            }}
-            public bool IsNumber(string s)
-             {
-                 foreach (char c in s)
-                 {
-                     if (!Char.IsDigit(c))
-                         return false;
-                 }
-                 return true;
-             }
-
-            
-                private void timer1_Tick(object sender, System.EventArgs e)
+            }
+        }
+        public bool IsNumber(string s)
         {
-            Brush b1 = new SolidBrush(Color.Wheat);
-            p = new Pen(Color.White, 2);
+            foreach (char c in s)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
+
+
+        private void timer1_Tick(object sender, System.EventArgs e)
+        {
+            Brush b1;
+            if (LoadedTheme.odbranaTema != null)
+            {
+                b1 = new SolidBrush(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.back));
+                p = new Pen(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.btnText));
+            }
+            else
+            {
+                b1 = new SolidBrush(Color.Wheat);
+                p = new Pen(Color.White, 2);
+            }
             ci = ci + 5;
             g.FillPie(b1, 210, 235, 90, 90, -90, ci);
             g.DrawEllipse(p, 210, 235, 90, 90);
@@ -471,67 +494,66 @@ namespace Calculate
                 TrainYourBrain.CstYes.Show("Вашето време истече", ":(");
                 this.Close();
             }
-           
-                
-                
-              
 
-            
-        }
 
-                private void Disabled()
-                {
-                    button2.Enabled = false;
-                    button3.Enabled = false;
-                    button4.Enabled = false;
-                    button5.Enabled = false;
-                    button6.Enabled = false;
-                    button7.Enabled = false;
-                    button8.Enabled = false;
-                    button9.Enabled = false;
-                    button10.Enabled = false;
-                    button11.Enabled = false;
-                    button12.Enabled = false;
-                    button13.Enabled = false;
 
-                }
 
-               
 
-                
-
-                private void MojBroj1_Paint_1(object sender, PaintEventArgs e)
-                {
-                    g = this.CreateGraphics();
-                    g.FillEllipse(b, 210, 235, 90, 90);
-
-                }
-
-                private void MojBroj1_FormClosed(object sender, FormClosedEventArgs e)
-                {
-                    timer1.Stop();
-                }
-
-                private void label9_Click(object sender, EventArgs e)
-                {
-
-                }
-
-               
-
-               
-
-               
-                 
 
         }
+
+        private void Disabled()
+        {
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button7.Enabled = false;
+            button8.Enabled = false;
+            button9.Enabled = false;
+            button10.Enabled = false;
+            button11.Enabled = false;
+            button12.Enabled = false;
+            button13.Enabled = false;
+
+        }
+
+
+
+
+
+        private void MojBroj1_Paint_1(object sender, PaintEventArgs e)
+        {
+            g = this.CreateGraphics();
+            g.FillEllipse(b, 210, 235, 90, 90);
+
+        }
+
+        private void MojBroj1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
+    }
 }
 
-       
 
-        
 
-       
 
-      
- 
+
+
+
+

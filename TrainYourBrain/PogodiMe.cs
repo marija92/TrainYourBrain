@@ -648,6 +648,14 @@ namespace Mastermind
            catch (FileNotFoundException excep)
            {
            }
+           if (LoadedTheme.odbranaTema == null)
+           {
+               b = new SolidBrush(Color.IndianRed);
+           }
+           else
+           {
+               b = new SolidBrush(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.btn));
+           }
        }
 
        private void label3_Click(object sender, EventArgs e)

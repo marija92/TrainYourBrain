@@ -238,6 +238,7 @@
             this.label7.Size = new System.Drawing.Size(135, 36);
             this.label7.TabIndex = 17;
             this.label7.Text = "Вкупно:";
+            
             // 
             // новаИграToolStripMenuItem
             // 

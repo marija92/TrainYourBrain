@@ -191,6 +191,13 @@ namespace Quiz
                         {
                             c.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
                             c.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                            if (c is Button)
+                            {
+                                Button cb = (Button)c;
+                                cb.FlatAppearance.MouseOverBackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                                cb.FlatAppearance.BorderColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                                cb.FlatAppearance.MouseDownBackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                            }
                         }
                         else if (c is Label)
                         {
@@ -218,10 +225,18 @@ namespace Quiz
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-          
-           Brush b1 = new SolidBrush(Color.Wheat);
-           p = new Pen(Color.White, 2);
 
+            Brush b1;
+            if (LoadedTheme.odbranaTema != null)
+            {
+                b1 = new SolidBrush(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.back));
+                p = new Pen(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.btnText));
+            }
+            else
+            {
+                b1 = new SolidBrush(Color.Wheat);
+                p = new Pen(Color.White, 2);
+            }
            ci = ci + 5;
            g = this.CreateGraphics();
            g.FillPie(b1, 150, 250, 95, 95, -90, ci);

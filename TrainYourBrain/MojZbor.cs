@@ -21,7 +21,7 @@ namespace TYB_MojZbor
 
         Graphics g;
         Pen p;
-        Brush b = new SolidBrush(Color.IndianRed);
+        Brush b;
         Stack<Button> st;
         List<string> klik;
         string s;
@@ -95,19 +95,39 @@ namespace TYB_MojZbor
                 StreamReader sr = new StreamReader("../../theme.txt");
                 LoadedTheme.odbranaTema = new CustomTheme(sr.ReadLine());
                 CustomTheme momentalnaTema = LoadedTheme.odbranaTema;
+                Color backC=System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                Color btnTextC=System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                Color btnC=System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
                 if (momentalnaTema != null)
                 {
                     foreach (Control cc in this.Controls)
                     {
                         if (cc is Button || cc is TextBox)
                         {
-                            cc.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
-                            cc.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                            cc.BackColor = btnC;
+                            cc.ForeColor = btnTextC;
+                            if (cc is Button)
+                            {
+                                Button cb = (Button)cc;
+                                cb.FlatAppearance.MouseOverBackColor = backC;
+                                cb.FlatAppearance.BorderColor = btnTextC;
+                                cb.FlatAppearance.MouseDownBackColor = btnTextC;
+                            }
                         }
                         else if (cc is Label)
                         {
-                            cc.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
-                            cc.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
+
+                            if (cc.BackColor.Equals(Color.Wheat))
+                            {
+                                cc.BackColor =backC;
+                                cc.ForeColor = btnC;
+                            }
+                            else
+                            {
+                                cc.BackColor = btnC;
+                                cc.ForeColor = btnTextC;
+                            }
+                            
                         }
                     }
                     BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
@@ -117,9 +137,14 @@ namespace TYB_MojZbor
             catch (FileNotFoundException excep)
             {
             }
-           
-            
-            
+            if (LoadedTheme.odbranaTema == null)
+            {
+                b = new SolidBrush(Color.IndianRed);
+            }
+            else
+            {
+                b=new SolidBrush(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.btn));
+            }
             char[] bukvi = dajMiBukvi();
             
             char []desetBukvi=new char[10];
@@ -343,11 +368,17 @@ namespace TYB_MojZbor
         }
         private void timer1_Tick(object sender, System.EventArgs e)
         {
-                                
-           
-            Brush b1 = new SolidBrush(Color.Wheat);
-            p = new Pen(Color.White, 2);         
-           
+            Brush b1;
+            if (LoadedTheme.odbranaTema != null)
+            {
+                b1 =new SolidBrush(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.back));
+                p = new Pen(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.btnText));
+            }
+            else
+            {
+                b1 = new SolidBrush(Color.Wheat);
+                p = new Pen(Color.White, 2);
+            }
                 ci = ci + 5;
                 g.FillPie(b1, 190, 125, 70, 70, -90, ci);
                 g.DrawEllipse(p, 190, 125, 70, 70);              

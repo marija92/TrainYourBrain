@@ -46,7 +46,7 @@ namespace Quiz
             kviz.AddLast(p);
             p = new Prasanje("ФИНКИ е факултет за туризам", false);
             kviz.AddLast(p);
-            p = new Prasanje("'Трето Полувреме' е македонски филм номиниран за оскар", true);
+            p = new Prasanje("'Трето Полувреме' е македонски филм номиниран за оскар", false);
             kviz.AddLast(p); 
             p = new Prasanje("'Дигитална тврдина' е дело на Пауло Коелјо", false);
             kviz.AddLast(p);
@@ -54,8 +54,6 @@ namespace Quiz
             kviz.AddLast(p);
             p = new Prasanje("Иван Исцелител е од Куманово", true);
             kviz.AddLast(p);
-          //  p = new Prasanje("Игричката ни е супер.Чиста 10ка ;)", true);
-           // kviz.AddLast(p);
             p = new Prasanje("Грипот уште се нарекува инфлуенца", true);
             kviz.AddLast(p);
             p = new Prasanje("Бројот PI уште се нарекува Лудолфов број", true);
@@ -81,6 +79,10 @@ namespace Quiz
             p = new Prasanje("Еден километар има 100 метри", false);
             kviz.AddLast(p);
             p = new Prasanje("Првата светска војна траела 5 години", false);
+            kviz.AddLast(p);
+            p = new Prasanje("На шишето од Кока-кола преовладува црвена боја", true);
+            kviz.AddLast(p);
+            p = new Prasanje("Пингивнот е птица која може да лета", false);
             kviz.AddLast(p);
 
         }

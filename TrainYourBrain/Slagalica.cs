@@ -259,7 +259,7 @@ namespace TYB_Slagalica
                 lblRez.Text = 0.ToString();
                 rezultat = 0;
                 Disabled();
-                TrainYourBrain.CstYes.Show("Повеќе срееќа следниот пат", ":(");
+                TrainYourBrain.CstYes.Show("Повеќе среќа следниот пат", ":(");
                 this.Close();
 
             }

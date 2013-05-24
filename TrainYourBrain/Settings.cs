@@ -57,15 +57,15 @@ namespace TrainYourBrain
             
             odbrana=mozniTemi[index];
             btnMojZbor.BackColor = System.Drawing.ColorTranslator.FromHtml(odbrana.btn);
+            btnMojZbor.FlatAppearance.BorderColor = System.Drawing.ColorTranslator.FromHtml(odbrana.btnText);
+            btnMojZbor.FlatAppearance.MouseOverBackColor = System.Drawing.ColorTranslator.FromHtml(odbrana.back);
+            btnMojZbor.FlatAppearance.MouseDownBackColor = System.Drawing.ColorTranslator.FromHtml(odbrana.btnText);
             this.BackColor = System.Drawing.ColorTranslator.FromHtml(odbrana.back);
+            btnMojZbor.ForeColor = System.Drawing.ColorTranslator.FromHtml(odbrana.btnText);
             label2.ForeColor = System.Drawing.ColorTranslator.FromHtml(odbrana.btnText);
             label2.BackColor = System.Drawing.ColorTranslator.FromHtml(odbrana.back);
         }
 
-        private void Settings_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {

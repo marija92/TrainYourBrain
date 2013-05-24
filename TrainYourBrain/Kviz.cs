@@ -206,6 +206,7 @@ namespace Quiz
                         }
                     }
                     BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                    b=new SolidBrush(System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn));
                 }
                 sr.Close();
             }

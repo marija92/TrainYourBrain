@@ -94,7 +94,6 @@
             this.Controls.Add(this.btnMojZbor);
             this.Name = "Settings";
             this.Text = "Settings";
-            this.Load += new System.EventHandler(this.Settings_Load);
             this.ResumeLayout(false);
 
         }

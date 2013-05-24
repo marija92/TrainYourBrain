@@ -61,6 +61,7 @@ namespace TYB_Slagalica
                             {
                                 Button cb = (Button)c;
                                 cb.FlatAppearance.MouseOverBackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+                                cb.FlatAppearance.MouseDownBackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
                                 cb.FlatAppearance.BorderColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
                             }
                         }
@@ -76,6 +77,10 @@ namespace TYB_Slagalica
             }
             catch (FileNotFoundException excep)
             {
+            }
+            if (LoadedTheme.odbranaTema != null)
+            {
+                b = new SolidBrush(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.btn));
             }
                 timer1.Start();
                 list.Add(btn1);
@@ -188,8 +193,17 @@ namespace TYB_Slagalica
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            b1 = new SolidBrush(Color.Wheat);
-            p = new Pen(Color.White, 2);
+            Brush b1;
+            if (LoadedTheme.odbranaTema != null)
+            {
+                b1 = new SolidBrush(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.back));
+                p = new Pen(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.btnText));
+            }
+            else
+            {
+                b1 = new SolidBrush(Color.Wheat);
+                p = new Pen(Color.White, 2);
+            }
             ci = ci + 5;
             g = this.CreateGraphics();
 

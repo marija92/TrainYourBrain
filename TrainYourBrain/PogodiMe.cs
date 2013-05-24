@@ -255,8 +255,18 @@ namespace Mastermind
        private void timer1_Tick(object sender, EventArgs e)
        {
           
-           p = new Pen(Color.White, 2);
-
+           
+           Brush b1;
+           if (LoadedTheme.odbranaTema != null)
+           {
+               b1 = new SolidBrush(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.back));
+               p = new Pen(System.Drawing.ColorTranslator.FromHtml(LoadedTheme.odbranaTema.btnText));
+           }
+           else
+           {
+               b1 = new SolidBrush(Color.Wheat);
+               p = new Pen(Color.White, 2);
+           }
            ci = ci + 5;
            g.FillPie(b1, 187, 387, 70, 70, -90, ci);
            g.DrawEllipse(p, 187, 387, 70, 70);
@@ -626,14 +636,24 @@ namespace Mastermind
                StreamReader sr = new StreamReader("../../theme.txt");
                LoadedTheme.odbranaTema = new CustomTheme(sr.ReadLine());
                CustomTheme momentalnaTema = LoadedTheme.odbranaTema;
+               Color backC = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.back);
+               Color btnTextC = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+               Color btnC = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
                if (momentalnaTema != null)
                {
                    foreach (Control c in this.Controls)
                    {
-                       if (c is Button || c is TextBox)
+                       if (c is Button || c is TextBox || c is PictureBox)
                        {
-                           c.BackColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btn);
-                           c.ForeColor = System.Drawing.ColorTranslator.FromHtml(momentalnaTema.btnText);
+                           c.BackColor = btnC;
+                           c.ForeColor = btnTextC;
+                           if (c is Button)
+                           {
+                               Button cb = (Button)c;
+                               cb.FlatAppearance.MouseOverBackColor = backC;
+                               cb.FlatAppearance.BorderColor = btnTextC;
+                               cb.FlatAppearance.MouseDownBackColor = btnTextC;
+                           }
                        }
                        else if (c is Label)
                        {

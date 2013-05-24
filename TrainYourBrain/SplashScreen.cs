@@ -43,7 +43,11 @@ namespace TrainYourBrain
                 {
                     prozirnost = prozirnost - 25;
                     string proz = prozirnost.ToString("X");
-                    label1.BackColor = System.Drawing.ColorTranslator.FromHtml("#" + proz + "FFFFFF");
+                    proz = "#" + proz + "FFFFFF";
+                    if (proz.Length == 9)
+                    {
+                        label1.BackColor = System.Drawing.ColorTranslator.FromHtml(proz);
+                    }
                     
                 }
                 else
@@ -51,7 +55,7 @@ namespace TrainYourBrain
                     
                    
                     timer1.Stop();
-                    this.Dispose();
+                   this.Dispose();
                 }
             }
         }

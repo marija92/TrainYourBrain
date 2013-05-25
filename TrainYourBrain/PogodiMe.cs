@@ -154,7 +154,7 @@ namespace Mastermind
         int tocni = 0;
         int ima = 0;
 
-        public void Check(LinkedList<Button> b) //fja za proverka na kombinacijata
+        public void Check() //fja za proverka na kombinacijata
         {
             int[] proveri = new int[4];
             for (int i = 0; i < 4; i++)
@@ -613,7 +613,7 @@ namespace Mastermind
 
        private void btnSubmit_Click(object sender, EventArgs e)
        {
-           Check(btns.ElementAt(rows));
+           Check();
            PaintBall((tocni > 0), (ima > 0), tocni, ima);
            disabled();
            rows++;

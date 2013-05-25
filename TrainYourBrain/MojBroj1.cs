@@ -43,91 +43,94 @@ namespace Calculate
         Random rnd = new Random();
         private void button1_Click_1(object sender, EventArgs e)
         {
-            double br1, br2;
-            cl.Play();
-            decimal d;
-            timer1.Stop();
-            if (Evaluator.TryParse(textBox1.Text, out d))
+            if (textBox1.Text.Trim().Length > 0)
             {
-                label1.Text = d.ToString();
+                double br1, br2;
+                cl.Play();
+                decimal d;
+                timer1.Stop();
+                if (Evaluator.TryParse(textBox1.Text, out d))
+                {
+                    label1.Text = d.ToString();
+                }
+                else
+                {
+                    label1.Text = "";
+                }
+                br1 = Convert.ToDouble(label1.Text);
+                br2 = Convert.ToDouble(textBox2.Text);
+
+                if (label1.Text.Equals(textBox2.Text))
+                {
+                    win.Play();
+                    timer1.Stop();
+                    label9.Text = "100";
+                    rezultat = 100;
+                    TrainYourBrain.CstYes.Show("Вашиот резултат е точен", "Браво!");
+
+                    this.Close();
+                }
+                else if (((br1 - br2) > 0 && (br1 - br2) <= 5) || ((br2 - br1) > 0 && (br2 - br1) <= 5))
+                {
+                    win.Play();
+                    timer1.Stop();
+                    label9.Text = "90";
+                    rezultat = 90;
+                    TrainYourBrain.CstYes.Show("Вашиот резултат е делумно точен", "Браво!");
+
+                    this.Close();
+                }
+                else if (((br1 - br2) > 0 && (br1 - br2) <= 10) || ((br2 - br1) > 0 && (br2 - br1) <= 10))
+                {
+                    win.Play();
+                    timer1.Stop();
+                    label9.Text = "80";
+                    rezultat = 80;
+                    TrainYourBrain.CstYes.Show("Вашиот резултат е делумно точен", "Браво!");
+
+                    this.Close();
+                }
+                else if (((br1 - br2) > 0 && (br1 - br2) <= 20) || ((br2 - br1) > 0 && (br2 - br1) <= 20))
+                {
+                    win.Play();
+                    timer1.Stop();
+                    label9.Text = "60";
+                    rezultat = 60;
+                    TrainYourBrain.CstYes.Show("Вашиот резултат е делумно точен", "Браво!");
+
+                    this.Close();
+                }
+                else
+                {
+
+                    lose.Play();
+                    label9.Text = "0";
+                    timer1.Stop();
+                    rezultat = 0;
+                    TrainYourBrain.CstYes.Show("Вашиот резултат е неточен", ":(");
+                    this.Close();
+
+                }
+
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                button5.Enabled = false;
+                button6.Enabled = false;
+                button7.Enabled = false;
+                button8.Enabled = false;
+                button9.Enabled = false;
+                button10.Enabled = false;
+                button11.Enabled = false;
+                button12.Enabled = false;
+                button13.Enabled = false;
+                textBox1.Text = "";
+
             }
             else
             {
-                label1.Text = "";
+                TrainYourBrain.CstYes.Show("Внесете број!", ":(");
             }
-            br1 = Convert.ToDouble(label1.Text);
-            br2 = Convert.ToDouble(textBox2.Text);
-
-            if (label1.Text.Equals(textBox2.Text))
-            {
-                win.Play();
-                timer1.Stop();
-                label9.Text = "100";
-                rezultat = 100;
-                TrainYourBrain.CstYes.Show("Вашиот резултат е точен", "Браво!");
-
-                this.Close();
-            }
-            else if (((br1 - br2) > 0 && (br1 - br2) <= 5) || ((br2 - br1) > 0 && (br2 - br1) <= 5))
-            {
-                win.Play();
-                timer1.Stop();
-                label9.Text = "90";
-                rezultat = 90;
-                TrainYourBrain.CstYes.Show("Вашиот резултат е делумно точен", "Браво!");
-
-                this.Close();
-            }
-            else if (((br1 - br2) > 0 && (br1 - br2) <= 10) || ((br2 - br1) > 0 && (br2 - br1) <= 10))
-            {
-                win.Play();
-                timer1.Stop();
-                label9.Text = "80";
-                rezultat = 80;
-                TrainYourBrain.CstYes.Show("Вашиот резултат е делумно точен", "Браво!");
-
-                this.Close();
-            }
-            else if (((br1 - br2) > 0 && (br1 - br2) <= 20) || ((br2 - br1) > 0 && (br2 - br1) <= 20))
-            {
-                win.Play();
-                timer1.Stop();
-                label9.Text = "60";
-                rezultat = 60;
-                TrainYourBrain.CstYes.Show("Вашиот резултат е делумно точен", "Браво!");
-
-                this.Close();
-            }
-            else
-            {
-
-                lose.Play();
-                label9.Text = "0";
-                timer1.Stop();
-                rezultat = 0;
-                TrainYourBrain.CstYes.Show("Вашиот резултат е неточен", ":(");
-                this.Close();
-
-            }
-
-
-
-
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button6.Enabled = false;
-            button7.Enabled = false;
-            button8.Enabled = false;
-            button9.Enabled = false;
-            button10.Enabled = false;
-            button11.Enabled = false;
-            button12.Enabled = false;
-            button13.Enabled = false;
-            textBox1.Text = "";
-
-
         }
         Button c;
         Button d;

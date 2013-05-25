@@ -3,4 +3,5 @@ pobedaa	390
 darinka	250
 marija	100
 danche	70
-
+sdfds	60
+proba	30

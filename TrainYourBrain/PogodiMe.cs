@@ -118,7 +118,7 @@ namespace Mastermind
             if (i == 2)
             {
                 lose.Play();
-                string pom = "Не ја погодивте комбинациајта.Точната комбинација е " + TocnaKombinacija();
+                string pom = "Не погодивте.Точната комбинација е " + TocnaKombinacija();
                 TrainYourBrain.CstYes.Show(pom, ":(");
                 this.Close();
                // timer1.Stop();

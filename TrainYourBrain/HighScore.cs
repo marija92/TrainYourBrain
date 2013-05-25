@@ -168,12 +168,19 @@ namespace TrainYourBrain
 
         private void button1_Click(object sender, EventArgs e)
         {
-            procitaj();
-            StreamReader sr = new StreamReader("../../highscore.txt");
-            textBox2.Text = sr.ReadToEnd();
-            sr.Dispose();
-            Clear();
-            disabled();
+            if (textBox1.Text.Trim().Length >0)
+            {
+                procitaj();
+                StreamReader sr = new StreamReader("../../highscore.txt");
+                textBox2.Text = sr.ReadToEnd();
+                sr.Dispose();
+                Clear();
+                disabled();
+            }
+            else 
+            {
+                TrainYourBrain.CstYes.Show("Внесете име", ":(");
+            }
            
         }
 

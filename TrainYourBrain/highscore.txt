@@ -2,6 +2,7 @@ car-d	480
 pobedaa	390
 darinka	250
 marija	100
+novo	80
 danche	70
 sdfds	60
 proba	30

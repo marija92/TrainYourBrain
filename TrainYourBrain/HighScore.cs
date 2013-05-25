@@ -176,6 +176,7 @@ namespace TrainYourBrain
                 sr.Dispose();
                 Clear();
                 disabled();
+                textBox1.Clear();
             }
             else 
             {
